@@ -1,0 +1,12 @@
+@font-face { font-family: Nasalization; src: url('nasalization.otf'); } 
+
+* {
+    font-family: Nasalization;
+    text-align: center;
+  }
+
+.centeredText
+  {
+    margin: auto;
+    padding: 200px;
+  }
