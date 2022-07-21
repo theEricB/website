@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>familyrecipes</title>
+    <link rel="stylesheet" href="recipes.css">
+</head>
+<body>
+    <div id="heading">
+        <h1>family recipes</h1>
+        <h3>founded in 2022</h3>
+    </div>
+    <div id="newRecipe">
+        <label for="name">recipe name:</label>
+        <input type="text" id="name">
+        <button onclick="SaveNewRecipe()"> Save! </button>
+    </div>
+    
+    <form method="post">
+        Enter Your Text Here:<br>
+        <input type="text" name="textdata"><br>
+        <input type="submit" name="submit">
+        
+    </form>
+    
+
+    <script>
+        
+        function SaveNewRecipe(){   
+            let name = document.getElementById("name");
+            newRecipe = document.createElement("p");
+            newRecipe.class = "recipe" 
+            newRecipe.innerText = name
+            document.body.appendChild(newRecipe);
+            console.log(newRecipe);
+        }
+    
+    </script>
+
+</body>
+</html>
+
+

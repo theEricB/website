@@ -1,0 +1,39 @@
+html{
+    background-color: #000000;
+}
+
+
+#heading{
+    text-align: center;
+    margin: auto;
+    vertical-align: middle;
+    max-width: 600pt;
+    color: white;
+    font-style: italic;
+}
+
+.post{
+    margin: auto;
+    max-width: 600pt;
+    color: black;
+    padding: 10pt;
+    border-radius: 10pt;
+}
+
+.link{
+    color: white;
+}
+
+.image{
+    max-width: 99%;
+    max-height: 99%;
+}
+
+* {
+    font-family: sans-serif;
+  }
+
+.description{
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-family:'Times New Roman', Times, serif
+}
