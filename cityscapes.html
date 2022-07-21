@@ -74,15 +74,6 @@
 
 
     <script>
-
-        big = "0"
-
-        // window.addEventListener("click", function(event) {
-        //     img = document.getElementById("bigImage")
-        //     console.log(img)
-
-        // });
-
         function Zoom(num){
             var w = window.innerWidth;
             var h = window.innerHeight;
@@ -90,14 +81,13 @@
                 return;
             }
 
-            
+
             directory = "images/cityBig/" + num + ".jpg";
             container = document.getElementById("container");
             img = document.createElement("img");
             img.setAttribute("src", directory);
             img.setAttribute("id", "bigImage")
             img.onclick = function () {
-                console.log("IMG is clicked");
                 container.style.pointerEvents = "none";
                 container.removeChild(img);
                 container.style.backgroundColor = "transparent";
