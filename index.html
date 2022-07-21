@@ -8,16 +8,10 @@
     <title>Erik Bauscher</title>
 </head>
 <body>
-    <div class="centeredText">
-        <button onclick="GoToLink('register.html')">TEST</button>
-        <h1 onclick="GoToLink('register.html')">Hi there.</h1>
+    <div style="margin: auto; width: 50%; text-align: center; margin-top: 20%;">
+    <button class="button" onclick="window.open('register.html', '_self');">
+        <h1>Hi there.</h1>
+    </button>
     </div>
-
-    <script>
-        function GoToLink(newPage){
-            console.log("test");
-            window.location.replace(newPage);
-        };
-    </script>
 </body>
 </html>
