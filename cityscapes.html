@@ -88,7 +88,12 @@
             img = document.createElement("img");
             img.setAttribute("src", directory);
             img.setAttribute("id", "bigImage")
-            img.setAttribute("onclick", Test())
+            img.onclick = function () {
+                console.log("IMG is clicked");
+                container.style.pointerEvents = "none";
+                container.removeChild(img);
+                container.style.backgroundColor = "transparent";
+            };
 
             var w = window.innerWidth;
             var h = window.innerHeight;
@@ -97,8 +102,6 @@
                 console.log("width smaller");
                 img.style.width = "100%"
                 container.style.flexDirection = "row"
-
-                //img.style.marginLeft = "-100px"
             }
             else {
                 img.style.height = "100%"
@@ -107,15 +110,11 @@
             }
 
             container.style.backgroundColor = "rgba(255, 255, 255, 0.8)";
-
             container.append(img);
-            big = "1"
+            container.style.pointerEvents = "all";
+
+
         };
-
-        function Test(){
-            console.log("test");
-        }
-
 
     </script>
 </body>
