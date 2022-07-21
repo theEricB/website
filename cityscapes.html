@@ -76,11 +76,11 @@
 
         big = "0"
 
-        window.addEventListener("click", function(event) {
-            img = document.getElementById("bigImage")
-            console.log(img)
+        // window.addEventListener("click", function(event) {
+        //     img = document.getElementById("bigImage")
+        //     console.log(img)
 
-        });
+        // });
 
         function Zoom(num){
             directory = "images/cityBig/" + num + ".png";
@@ -88,7 +88,7 @@
             img = document.createElement("img");
             img.setAttribute("src", directory);
             img.setAttribute("id", "bigImage")
-            //img.setAttribute("onclick", Delete())
+            img.setAttribute("onclick", Test())
 
             var w = window.innerWidth;
             var h = window.innerHeight;
@@ -111,6 +111,10 @@
             container.append(img);
             big = "1"
         };
+
+        function Test(){
+            console.log("test");
+        }
 
 
     </script>
