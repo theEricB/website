@@ -8,43 +8,38 @@
     <link rel="stylesheet" href="cityscapes.css">
 </head>
 <body>
+    <div id="container"></div>
+
     <h1>
         <br>
     </h1>
 
+    
     <div id="newtown" class="pictures">
-<!--         <p>test</p>
-        <p>test</p>
-        <p>test</p>
-        <p>test</p>
-        <p>test</p> -->
 
-        <img src="images/kingstreet.jpg" class="image">
-        <img src="images/kingstreet2.jpg" class="image">
-        <img src="images/kingstreet3.jpg" class="image">
-        <img src="images/kingstreet4.jpg" class="image">
-        <img src="images/kingstreet5.jpg" class="image"> 
+        <img onclick="Zoom(0)" src="images/cityThumbnails/0.jpg" class="image">
+        <img src="images/cityThumbnails/1.jpg" class="image">
+        <img src="images/cityThumbnails/2.jpg" class="image">
+        <img src="images/cityThumbnails/3.jpg" class="image">
+        <img src="images/cityThumbnails/4.jpg" class="image"> 
     </div>
     
-    <h1>
+    <h3>
         <br>
-        <br>
-        <br>
-    </h1>
+    </h3>
 
     <div id="cbd" class="pictures">
  
-        <img src="images/cbd.jpg" class="image">
-        <img src="images/cbd2.jpg" class="image">
-        <img src="images/cbd3.jpg" class="image">
-        <img src="images/cbd4.jpg" class="image">
-        <img src="images/cbd5.jpg" class="image">   
+        <img src="images/cityThumbnails/5.jpg" class="image">
+        <img src="images/cityThumbnails/6.jpg" class="image">
+        <img src="images/cityThumbnails/7.jpg" class="image">
+        <img src="images/cityThumbnails/8.jpg" class="image">
+        <img src="images/cityThumbnails/9.jpg" class="image"> 
     </div>
 
-    <h1>
+    <p>
         <br>
-        <br>
-    </h1>
+    </p>
 
     <div id="description">
         <h1 class="text">cityscapes</h1>
@@ -59,7 +54,13 @@
     </div>
 
     <div id="details">
- 
+        <h1><br></h1>
+        <h3 class="detail" style="font-family: Arial, Helvetica, sans-serif;">exhibition</h3>
+        <img src="images/exhibition1.png" class="detail">
+        <img src="images/exhibition2.png" class="detail">
+        <img src="images/exhibition3.png" class="detail">
+        <h1><br></h1>
+        <h3 class="detail" style="font-family: Arial, Helvetica, sans-serif;">details</h3>
         <img src="images/details1.jpg" class="detail">
         <img src="images/details2.jpg" class="detail">
         <img src="images/details3.jpg" class="detail">
@@ -70,26 +71,47 @@
         <img src="images/details8.jpg" class="detail">
     </div>
 
+
     <script>
-        let zoomed = 0;
 
-        imgs = document.getElementsByClassName("image")
-        console.log(imgs)
-        for (let img of imgs) {
-            
-            img.onclick = function(){
-                console.log(img);
-                img.style.maxWidth = "100%";
-                zoomed = 1;
-                console.log(zoomed)
+        big = "0"
+
+        window.addEventListener("click", function(event) {
+            img = document.getElementById("bigImage")
+            console.log(img)
+
+        });
+
+        function Zoom(num){
+            directory = "images/cityBig/" + num + ".png";
+            container = document.getElementById("container");
+            img = document.createElement("img");
+            img.setAttribute("src", directory);
+            img.setAttribute("id", "bigImage")
+            img.setAttribute("onclick", Delete())
+
+            var w = window.innerWidth;
+            var h = window.innerHeight;
+
+            if(w<h){
+                console.log("width smaller");
+                img.style.width = "100%"
+                container.style.flexDirection = "row"
+
+                //img.style.marginLeft = "-100px"
             }
-        }
+            else {
+                img.style.height = "100%"
+                container.style.flexDirection = "column"
 
-        if (zoomed) {
-            console.log("test");
-            zoomed = false;
+            }
 
-        }
+            container.style.backgroundColor = "rgba(255, 255, 255, 0.8)";
+
+            container.append(img);
+            big = "1"
+        };
+
 
     </script>
 </body>
