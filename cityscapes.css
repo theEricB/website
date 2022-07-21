@@ -1,0 +1,66 @@
+#details{
+    display: flex;
+    flex-direction: column;
+    max-width: 100%;
+    margin: 10pt;
+}
+
+.detail{
+    margin: 10pt;
+    align-items: baseline;
+}
+
+@media (min-width:1440px) { 
+
+#description{
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#description h3{
+    padding-top: 13px;
+}
+
+#description p{
+    padding-top: 17px;
+    width: 50%;
+}
+
+#newtown{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+#newtown img {
+    max-width: 15%;
+} 
+
+#cbd{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+#cbd img {
+    max-width: 10%;
+} 
+}
+
+@media (max-width:1440px) { 
+    
+#description{
+    padding: 10%;
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+}
+
+
+.image{
+    max-width: 90%;
+}
+}

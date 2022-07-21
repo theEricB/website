@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cityscapes</title>
+    <link rel="stylesheet" href="cityscapes.css">
+</head>
+<body>
+    <h1>
+        <br>
+    </h1>
+
+    <div id="newtown" class="pictures">
+<!--         <p>test</p>
+        <p>test</p>
+        <p>test</p>
+        <p>test</p>
+        <p>test</p> -->
+
+        <img src="images/kingstreet.jpg" class="image">
+        <img src="images/kingstreet2.jpg" class="image">
+        <img src="images/kingstreet3.jpg" class="image">
+        <img src="images/kingstreet4.jpg" class="image">
+        <img src="images/kingstreet5.jpg" class="image"> 
+    </div>
+    
+    <h1>
+        <br>
+        <br>
+        <br>
+    </h1>
+
+    <div id="cbd" class="pictures">
+ 
+        <img src="images/cbd.jpg" class="image">
+        <img src="images/cbd2.jpg" class="image">
+        <img src="images/cbd3.jpg" class="image">
+        <img src="images/cbd4.jpg" class="image">
+        <img src="images/cbd5.jpg" class="image">   
+    </div>
+
+    <h1>
+        <br>
+        <br>
+    </h1>
+
+    <div id="description">
+        <h1 class="text">cityscapes</h1>
+        <h3 class="text">series of prints, color, dinA3</h3>
+        <p class="text">
+        This exploration tries to deconstruct the effect architectural facades have on urban space. It also raises the question, how much effect there even is. 
+        Every collage consists out of multiple pictures of the chosen buildings taken from different angles. Based on David Hockney’s collages from the 90’s, the individual pictures are then assembled to form a more complete image of each building. By using different positions, angles and focal lengths, the final collage is rich in detail and gives a more three-dimensional feeling to the viewer. 
+        The exhibition compares two suburbs, Newtown and the central business district, of Sydney, Australia. While Newtown mostly consists of two- or three-story high buildings from the late 19th century, the CBD is known for its high rises from the 20th and 21st century.
+        The choice of the buildings mostly reflects personal interest as well as diversity in architecture and facades. Along the architectural facade, scenes on the streets are also captured and included in the collage, which allows for a deeper understanding of the urban space. 
+        The combination of capturing architecture in multiple settings with the digital process of rearranging the images on a canvas lets one see and appreciate architecture from a different perspective.
+        </p>
+    </div>
+
+    <div id="details">
+ 
+        <img src="images/details1.jpg" class="detail">
+        <img src="images/details2.jpg" class="detail">
+        <img src="images/details3.jpg" class="detail">
+        <img src="images/details4.jpg" class="detail">
+        <img src="images/details5.jpg" class="detail">   
+        <img src="images/details6.jpg" class="detail">
+        <img src="images/details7.jpg" class="detail">
+        <img src="images/details8.jpg" class="detail">
+    </div>
+
+    <script>
+        let zoomed = 0;
+
+        imgs = document.getElementsByClassName("image")
+        console.log(imgs)
+        for (let img of imgs) {
+            
+            img.onclick = function(){
+                console.log(img);
+                img.style.maxWidth = "100%";
+                zoomed = 1;
+                console.log(zoomed)
+            }
+        }
+
+        if (zoomed) {
+            console.log("test");
+            zoomed = false;
+
+        }
+
+    </script>
+</body>
+</html>

@@ -1,8 +1,17 @@
+*{
+font-family: Helvetica;
+}
 
+.centeredText
+{
+text-align: center;
+margin: auto;
+}
 
-  .centeredText
-  {
-    text-align: center;
-    margin: auto;
-    padding: 200px;    
-  }
+.heading{
+    margin-bottom: 5%;
+}
+
+.register{
+margin-left: 5%;
+}
