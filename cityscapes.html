@@ -84,6 +84,13 @@
         // });
 
         function Zoom(num){
+            var w = window.innerWidth;
+            var h = window.innerHeight;
+            if(w<600){
+                return;
+            }
+
+            
             directory = "images/cityBig/" + num + ".jpg";
             container = document.getElementById("container");
             img = document.createElement("img");
@@ -96,8 +103,7 @@
                 container.style.backgroundColor = "transparent";
             };
 
-            var w = window.innerWidth;
-            var h = window.innerHeight;
+            
 
             if(w<h){
                 console.log("width smaller");
