@@ -157,7 +157,7 @@ function animate() {
     
     camera.getWorldDirection( camDirection );
     if ( moveForward ) velocity.y = camDirection.y * heightAcceleration * delta;
-    if ( moveBackward ) velocity.y = -camDirection.y * heightAcceleration * delta;
+    if ( moveBackward ) velocity.y = -1*(camDirection.y * heightAcceleration * delta);
 
     controls.getObject().position.y += velocity.y
 
