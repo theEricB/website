@@ -8,11 +8,8 @@ let camera, scene, renderer, controls;
 
 var camDirection = new THREE.Vector3(); // create once and reuse it!
 
-// height speed
-let heightAcceleration = 8;
-
-// planar speed
 let speed = 0.6;
+let heightAcceleration = 8;
 let planarAcceleration = 80;
 
 let moveForward = false;
@@ -34,7 +31,7 @@ function init() {
 
     // CAMERA CONTROLS
 
-    camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );
+    camera = new THREE.PerspectiveCamera( 50, window.innerWidth / window.innerHeight, 0.1, 1000 );
     camera.position.z = 10;
 
     scene = new THREE.Scene();
