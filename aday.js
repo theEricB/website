@@ -1,6 +1,4 @@
-
-import * as THREE from 'three';
-const scene = new THREE.Scene();
+//import * as THREE from 'three';
 
 
 console.log("running");
