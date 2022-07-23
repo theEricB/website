@@ -31,7 +31,8 @@ function init() {
     // CAMERA CONTROLS
 
     camera = new THREE.PerspectiveCamera( 50, window.innerWidth / window.innerHeight, 0.1, 1000 );
-    camera.position.z = 10;
+    camera.position.x = 5;
+    camera.position.z = 20;
 
     scene = new THREE.Scene();
  
@@ -107,11 +108,12 @@ function init() {
     // OBJECTS
 
     const loader = new GLTFLoader();
-    // loader.load( './models/environment.glb', function ( gltf ) {
+    // loader.load( './models/adayinmylife.glb', function ( gltf ) {
     //     let model = gltf.scene;
-    //     model.scale.x = 0.1;
-    //     model.scale.y = 0.1;
-    //     model.scale.z = 0.1;
+    //     console.log(model);
+    //     // model.scale.x = 0.1;
+    //     // model.scale.y = 0.1;
+    //     // model.scale.z = 0.1;
     //     scene.add( model );
     // });
     
@@ -131,12 +133,30 @@ function init() {
         scene.add( model );
     });
 
-    
+    const box1 = new THREE.BoxGeometry( 4, 4, 4 );
+    const box2 = new THREE.BoxGeometry( 4, 4, 4 );
+    const box3 = new THREE.BoxGeometry( 4, 4, 4 );
+    box2.translate(5, 0, 0);
+    box3.translate(10, 0, 0);
 
-    const geometry = new THREE.BoxGeometry( 1, 1, 1 );
-    const material = new THREE.MeshBasicMaterial( { color: 0x00ff00 } );
-    const cube = new THREE.Mesh( geometry, material );
-    // scene.add( cube );
+    let lineW = 10;
+
+    var wox1 = new THREE.EdgesGeometry( box1 ); 
+    var mat1 = new THREE.LineBasicMaterial( { color: 0xff0000, linewidth: lineW } );
+    var wireframe1 = new THREE.LineSegments( wox1, mat1 );
+    
+    var wox2 = new THREE.EdgesGeometry( box2 ); 
+    var mat2 = new THREE.LineBasicMaterial( { color: 0x00ffff, linewidth: lineW } );
+    var wireframe2 = new THREE.LineSegments( wox2, mat2 );
+    
+    var wox3 = new THREE.EdgesGeometry( box3 ); 
+    var mat3 = new THREE.LineBasicMaterial( { color: 0xffff00, linewidth: lineW } );
+    var wireframe3 = new THREE.LineSegments( wox3, mat3 );
+    
+    scene.add( wireframe1, wireframe2, wireframe3 );
+
+
+
 
     // RENDERER
     renderer = new THREE.WebGLRenderer( { antialias: true } );
