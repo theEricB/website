@@ -11,6 +11,9 @@ var camDirection = new THREE.Vector3(); // create once and reuse it!
 let speed = 0.6;
 let heightAcceleration = 8;
 let planarAcceleration = 80;
+let reduceFactor = 0.4;
+let minSpeed = 0.2;
+
 
 let moveForward = false;
 let moveBackward = false;
@@ -20,6 +23,10 @@ let moveRight = false;
 let prevTime = performance.now();
 const velocity = new THREE.Vector3();
 const direction = new THREE.Vector3();
+
+const pos1 = new THREE.Vector3(0,0,0);
+const pos2 = new THREE.Vector3(5,0,0);
+const pos3 = new THREE.Vector3(10,0,0);
 
 
 init();
@@ -190,10 +197,36 @@ function animate() {
     requestAnimationFrame( animate );
 
 
+    // reduce camera speed when close to objects
+
+    let dist1 = camera.position.distanceTo(pos1);
+    let dist2 = camera.position.distanceTo(pos2);
+    let dist3 = camera.position.distanceTo(pos3);
+
+    let newSpeed = speed
+
+    if (dist1 < 5){
+        let test =  speed - ((1 - (dist1/5)) * reduceFactor);
+        if(test<0.2) test=minSpeed;
+        newSpeed = test;
+    }
+    else if (dist2 < 5){
+        let test =  speed - ((1 - (dist2/5)) * reduceFactor);
+        if(test<0.2) test=minSpeed;
+        newSpeed = test;
+    }
+    else if (dist3 < 5){
+        let test =  speed - ((1 - (dist3/5)) * reduceFactor);
+        if(test<0.2) test=minSpeed;
+        newSpeed = test;
+    }
+    
+    
+
     const time = performance.now();
 
 
-    const delta = ( time - prevTime ) / (1000/speed);
+    const delta = ( time - prevTime ) / (1000/newSpeed);
 
     velocity.x -= velocity.x * 10.0 * delta;
     velocity.y -= velocity.y * 10.0 * delta;
