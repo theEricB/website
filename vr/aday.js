@@ -1,5 +1,6 @@
 import { PointerLockControls } from "./modules/PointerLockControls.js";
 import { GLTFLoader } from './modules/GLTFLoader.js';
+import { SpotLight } from "./modules/three.module.js";
 
 
 
@@ -104,34 +105,49 @@ function init() {
     document.addEventListener( 'keydown', onKeyDown );
     document.addEventListener( 'keyup', onKeyUp );
 
+    // LIGHTS
+
+    // const light1 = new THREE.SpotLight(0xff0000);
+    // light1.position.set(0, 4, 0);
+    // scene.add(light1);
+
+    const light1 = new THREE.HemisphereLight(0xffffff, 0xffffff, 1);
+    light1.position.set(5, 0, 0);
+    scene.add(light1);
 
     // OBJECTS
 
     const loader = new GLTFLoader();
-    // loader.load( './models/adayinmylife.glb', function ( gltf ) {
-    //     let model = gltf.scene;
-    //     console.log(model);
-    //     // model.scale.x = 0.1;
-    //     // model.scale.y = 0.1;
-    //     // model.scale.z = 0.1;
-    //     scene.add( model );
-    // });
-    
-    loader.load( './models/life3.glb', function ( gltf ) {
+
+
+    // objects random in boxes
+
+    let randomLife = Math.floor(Math.random() * 6) + 1;
+    let randomStudy = Math.floor(Math.random() * 4) + 1;
+    let randomQmb = Math.floor(Math.random() * 6) + 1;
+
+    let stringLife = "./models/life" + randomLife + ".glb"
+    let stringStudy = "./models/study" + randomStudy + ".glb"
+    let stringQmb = "./models/qmb" + randomQmb + ".glb"
+
+    loader.load(stringLife, function ( gltf ) {
         let model = gltf.scene;
         model.position.x = 0;
         scene.add( model );
     });
-    loader.load( './models/study3.glb', function ( gltf ) {
+    loader.load(stringStudy, function ( gltf ) {
         let model = gltf.scene;
         model.position.x = 5;
         scene.add( model );
     });
-    loader.load( './models/qmb3.glb', function ( gltf ) {
+    loader.load(stringQmb, function ( gltf ) {
         let model = gltf.scene;
         model.position.x = 10;
         scene.add( model );
     });
+
+
+    // boxes
 
     const box1 = new THREE.BoxGeometry( 4, 4, 4 );
     const box2 = new THREE.BoxGeometry( 4, 4, 4 );
@@ -139,7 +155,7 @@ function init() {
     box2.translate(5, 0, 0);
     box3.translate(10, 0, 0);
 
-    let lineW = 10;
+    let lineW = 3;
 
     var wox1 = new THREE.EdgesGeometry( box1 ); 
     var mat1 = new THREE.LineBasicMaterial( { color: 0xff0000, linewidth: lineW } );
