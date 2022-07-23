@@ -1,5 +1,5 @@
-import { OrbitControls } from "./modules/OrbitControls.js";
 import { PointerLockControls } from "./modules/PointerLockControls.js";
+import { GLTFLoader } from './modules/GLTFLoader.js';
 
 
 
@@ -7,7 +7,6 @@ import { PointerLockControls } from "./modules/PointerLockControls.js";
 let camera, scene, renderer, controls;
 
 var camDirection = new THREE.Vector3(); // create once and reuse it!
-
 let speed = 0.6;
 let heightAcceleration = 8;
 let planarAcceleration = 80;
@@ -107,10 +106,37 @@ function init() {
 
     // OBJECTS
 
+    const loader = new GLTFLoader();
+    // loader.load( './models/environment.glb', function ( gltf ) {
+    //     let model = gltf.scene;
+    //     model.scale.x = 0.1;
+    //     model.scale.y = 0.1;
+    //     model.scale.z = 0.1;
+    //     scene.add( model );
+    // });
+    
+    loader.load( './models/life3.glb', function ( gltf ) {
+        let model = gltf.scene;
+        model.position.x = 0;
+        scene.add( model );
+    });
+    loader.load( './models/study3.glb', function ( gltf ) {
+        let model = gltf.scene;
+        model.position.x = 5;
+        scene.add( model );
+    });
+    loader.load( './models/qmb3.glb', function ( gltf ) {
+        let model = gltf.scene;
+        model.position.x = 10;
+        scene.add( model );
+    });
+
+    
+
     const geometry = new THREE.BoxGeometry( 1, 1, 1 );
     const material = new THREE.MeshBasicMaterial( { color: 0x00ff00 } );
     const cube = new THREE.Mesh( geometry, material );
-    scene.add( cube );
+    // scene.add( cube );
 
     // RENDERER
     renderer = new THREE.WebGLRenderer( { antialias: true } );
