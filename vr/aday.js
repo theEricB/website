@@ -12,7 +12,7 @@ let speed = 0.6;
 let heightAcceleration = 8;
 let planarAcceleration = 80;
 let reduceFactor = 0.4;
-let minSpeed = 0.2;
+let minSpeed = 0.1;
 
 
 let moveForward = false;
@@ -35,6 +35,18 @@ animate();
 
 
 function init() {
+    // LOADER
+
+    function onProgress( xhr ) {
+
+        if ( xhr.lengthComputable ) {
+
+            const percentComplete = xhr.loaded / xhr.total * 100;
+            console.log( 'model ' + Math.round( percentComplete, 2 ) + '% downloaded' );
+
+        }
+
+    }
 
     // CAMERA CONTROLS
 
@@ -141,17 +153,18 @@ function init() {
         let model = gltf.scene;
         model.position.x = 0;
         scene.add( model );
-    });
+    }, onProgress);
     loader.load(stringStudy, function ( gltf ) {
         let model = gltf.scene;
         model.position.x = 5;
         scene.add( model );
-    });
+    }, onProgress);
     loader.load(stringQmb, function ( gltf ) {
         let model = gltf.scene;
         model.position.x = 10;
         scene.add( model );
-    });
+    }, onProgress);
+
 
 
     // boxes
@@ -187,6 +200,31 @@ function init() {
 
     renderer.setSize( window.innerWidth, window.innerHeight );
     document.body.appendChild( renderer.domElement );
+
+
+    const blocker = document.getElementById( 'blocker' );
+    const instructions = document.getElementById( 'instructions' );
+
+    instructions.addEventListener( 'click', function () {
+
+        controls.lock();
+
+    } );
+
+    controls.addEventListener( 'lock', function () {
+
+        instructions.style.display = 'none';
+        blocker.style.display = 'none';
+
+    } );
+
+    controls.addEventListener( 'unlock', function () {
+
+        blocker.style.display = 'block';
+        instructions.style.display = '';
+
+    } );
+
 
 }
 
