@@ -37,16 +37,18 @@ animate();
 function init() {
     // LOADER
 
-    function onProgress( xhr ) {
+    const manager = new THREE.LoadingManager();
+    
+    manager.onStart = function(url, item, total){
+        console.log("loading started");
+    };
 
-        if ( xhr.lengthComputable ) {
+    manager.onLoad = function ( ) {
 
-            const percentComplete = xhr.loaded / xhr.total * 100;
-            console.log( 'model ' + Math.round( percentComplete, 2 ) + '% downloaded' );
+        console.log( 'Loading complete!');
+    
+    };
 
-        }
-
-    }
 
     // CAMERA CONTROLS
 
@@ -136,7 +138,7 @@ function init() {
 
     // OBJECTS
 
-    const loader = new GLTFLoader();
+    const loader = new GLTFLoader(manager);
 
 
     // objects random in boxes
@@ -153,17 +155,17 @@ function init() {
         let model = gltf.scene;
         model.position.x = 0;
         scene.add( model );
-    }, onProgress);
+    });
     loader.load(stringStudy, function ( gltf ) {
         let model = gltf.scene;
         model.position.x = 5;
         scene.add( model );
-    }, onProgress);
+    });
     loader.load(stringQmb, function ( gltf ) {
         let model = gltf.scene;
         model.position.x = 10;
         scene.add( model );
-    }, onProgress);
+    });
 
 
 
