@@ -62,6 +62,7 @@ function init() {
     
             instructions.style.display = 'none';
             blocker.style.display = 'none';
+            sound.play();
     
         } );
     
@@ -69,6 +70,8 @@ function init() {
     
             blocker.style.display = 'block';
             instructions.style.display = '';
+            sound.stop();
+
     
         } );
         
@@ -152,15 +155,28 @@ function init() {
     document.addEventListener( 'keydown', onKeyDown );
     document.addEventListener( 'keyup', onKeyUp );
 
-    // LIGHTS
-
-    // const light1 = new THREE.SpotLight(0xff0000);
-    // light1.position.set(0, 4, 0);
-    // scene.add(light1);
-
+    // SOME LIGHT
     const light1 = new THREE.HemisphereLight(0xffffff, 0xffffff, 1);
     light1.position.set(5, 0, 0);
     scene.add(light1);
+
+    // AUDIO
+
+    const listener = new THREE.AudioListener();
+    camera.add( listener );
+
+    // create a global audio source
+    const sound = new THREE.Audio( listener );
+
+    // load a sound and set it as the Audio object's buffer
+    const audioLoader = new THREE.AudioLoader(manager);
+    audioLoader.load( 'models/beatles.mp3', function( buffer ) {
+        sound.setBuffer( buffer );
+        sound.setLoop( true );
+        sound.setVolume( 0.5 );
+        
+    });
+
 
     // OBJECTS
 
@@ -228,30 +244,6 @@ function init() {
 
     renderer.setSize( window.innerWidth, window.innerHeight );
     document.body.appendChild( renderer.domElement );
-
-
-    // const blocker = document.getElementById( 'blocker' );
-    // const instructions = document.getElementById( 'instructions' );
-
-    // instructions.addEventListener( 'click', function () {
-
-    //     controls.lock();
-
-    // } );
-
-    // controls.addEventListener( 'lock', function () {
-
-    //     instructions.style.display = 'none';
-    //     blocker.style.display = 'none';
-
-    // } );
-
-    // controls.addEventListener( 'unlock', function () {
-
-    //     blocker.style.display = 'block';
-    //     instructions.style.display = '';
-
-    // } );
 
 }
 
