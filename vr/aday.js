@@ -38,14 +38,40 @@ function init() {
     // LOADER
 
     const manager = new THREE.LoadingManager();
-    
+
     manager.onStart = function(url, item, total){
         console.log("loading started");
     };
 
     manager.onLoad = function ( ) {
-
+        const loadP = document.getElementById( 'loading' );
+        loadP.innerHTML = "Click to Start!"
         console.log( 'Loading complete!');
+        
+        
+        const blocker = document.getElementById( 'blocker' );
+        const instructions = document.getElementById( 'instructions' );
+
+        instructions.addEventListener( 'click', function () {
+    
+            controls.lock();
+    
+        } );
+    
+        controls.addEventListener( 'lock', function () {
+    
+            instructions.style.display = 'none';
+            blocker.style.display = 'none';
+    
+        } );
+    
+        controls.addEventListener( 'unlock', function () {
+    
+            blocker.style.display = 'block';
+            instructions.style.display = '';
+    
+        } );
+        
     
     };
 
@@ -62,9 +88,9 @@ function init() {
     controls = new PointerLockControls( camera, document.body );
 
     // unlock mouse controls
-    document.addEventListener( 'click', function () {
-        controls.lock();
-    } );
+    // document.addEventListener( 'click', function () {
+    //     controls.lock();
+    // } );
 
     scene.add( controls.getObject() );
 
@@ -204,29 +230,28 @@ function init() {
     document.body.appendChild( renderer.domElement );
 
 
-    const blocker = document.getElementById( 'blocker' );
-    const instructions = document.getElementById( 'instructions' );
+    // const blocker = document.getElementById( 'blocker' );
+    // const instructions = document.getElementById( 'instructions' );
 
-    instructions.addEventListener( 'click', function () {
+    // instructions.addEventListener( 'click', function () {
 
-        controls.lock();
+    //     controls.lock();
 
-    } );
+    // } );
 
-    controls.addEventListener( 'lock', function () {
+    // controls.addEventListener( 'lock', function () {
 
-        instructions.style.display = 'none';
-        blocker.style.display = 'none';
+    //     instructions.style.display = 'none';
+    //     blocker.style.display = 'none';
 
-    } );
+    // } );
 
-    controls.addEventListener( 'unlock', function () {
+    // controls.addEventListener( 'unlock', function () {
 
-        blocker.style.display = 'block';
-        instructions.style.display = '';
+    //     blocker.style.display = 'block';
+    //     instructions.style.display = '';
 
-    } );
-
+    // } );
 
 }
 
