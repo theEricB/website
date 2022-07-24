@@ -83,6 +83,7 @@ function init() {
 
     camera = new THREE.PerspectiveCamera( 50, window.innerWidth / window.innerHeight, 0.1, 1000 );
     camera.position.x = 5;
+    camera.position.y = -0.5;
     camera.position.z = 20;
 
     scene = new THREE.Scene();
@@ -168,9 +169,13 @@ function init() {
     // create a global audio source
     const sound = new THREE.Audio( listener );
 
+    let randSound = Math.floor(Math.random() * 4);
+
+    let soundString = "models/sound" + randSound + ".mp3"
+
     // load a sound and set it as the Audio object's buffer
     const audioLoader = new THREE.AudioLoader(manager);
-    audioLoader.load( 'models/beatles.mp3', function( buffer ) {
+    audioLoader.load( soundString, function( buffer ) {
         sound.setBuffer( buffer );
         sound.setLoop( true );
         sound.setVolume( 0.5 );
@@ -245,9 +250,19 @@ function init() {
     renderer.setSize( window.innerWidth, window.innerHeight );
     document.body.appendChild( renderer.domElement );
 
+
+    window.addEventListener( 'resize', onWindowResize );
+
 }
 
+function onWindowResize() {
 
+    camera.aspect = window.innerWidth / window.innerHeight;
+    camera.updateProjectionMatrix();
+
+    renderer.setSize( window.innerWidth, window.innerHeight );
+
+}
 
 function animate() {
 
