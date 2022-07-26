@@ -80,11 +80,11 @@
 
 .image{
     max-width: 99%;
-    padding-top: 100px;
+    padding-top: 10vh;
 }
 
 .detail{
-    width: 95vh;
+    width: 95vw;
 }
 
 
