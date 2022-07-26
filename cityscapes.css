@@ -23,12 +23,18 @@
     align-items: baseline;
 }
 
+.detail img{
+    width: 100%;
+}
+
 @media (min-width:600px) { 
 
 #description{
     font-family: Arial, Helvetica, sans-serif;
     display: flex;
     justify-content: space-evenly;
+    text-align: justify;
+
 }
 
 #description h3{
@@ -39,6 +45,7 @@
     padding-top: 17px;
     width: 50%;
 }
+
 
 #newtown{
     display: flex;
