@@ -1,3 +1,6 @@
+
+@media (min-width:600px) { 
+
 #container{
     height: 95%;
     width: 98%;
@@ -22,13 +25,7 @@
     margin: 10pt;
     align-items: baseline;
 }
-
-.detail img{
-    width: 100%;
-    height: auto;
-}
-
-@media (min-width:600px) { 
+    
 
 #description{
     font-family: Arial, Helvetica, sans-serif;
@@ -77,10 +74,18 @@
     flex-direction: column;
     text-align: justify;
     justify-content: center;
+    padding: 5%;
 }
 
 
 .image{
     max-width: 99%;
 }
+
+#cbd img {
+    padding-top: 5%;
+} 
+
+
+
 }
