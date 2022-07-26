@@ -80,11 +80,12 @@
 
 .image{
     max-width: 99%;
+    padding-top: 100px;
 }
 
-#cbd img {
-    padding-top: 5%;
-} 
+.detail{
+    width: 95vh;
+}
 
 
 
