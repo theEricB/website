@@ -27,3 +27,8 @@ margin: auto;
     cursor:pointer;
 
 }
+
+.button:hover{
+    color: #0c172f;
+
+}
