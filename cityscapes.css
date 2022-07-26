@@ -74,12 +74,12 @@
     flex-direction: column;
     text-align: justify;
     justify-content: center;
-    padding: 5%;
+    width: 95vw;
 }
 
 
 .image{
-    max-width: 99%;
+    width: 95vw;
     padding-top: 10vh;
 }
 
