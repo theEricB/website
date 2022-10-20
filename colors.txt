@@ -1,0 +1,19 @@
+color palettes:
+
+
+-------------------
+created by: eb
+
+classy almost rgb colors inspired by:
+https://www.youtube.com/watch?v=_n_iKR3Icio&ab_channel=MaxCooper
+
+sorted in bw, greys, colors
+
+000000, ffffff, 
+bebebe, 999999, 222222
+000fff, 00e6ff, ff4400, ff1900, fff000
+
+js: ["#bebebe", "#999999", "#222222", "#000fff", "#00e6ff", "#ff4400", "#ff1900", "#fff000"]
+
+-------------------
+const colors = ["#4bdebf", "#f24830", "#fefe14", "#ff98c7", "#0eabce"]
