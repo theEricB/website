@@ -13,12 +13,70 @@
         THIS IS OUR THESIS!
         THIS IS WHAT WE SAY
         AND THIS IS WHY IT'S RIGHT
-        YADAYADAYADA
+        YADAY ADAYADAYAD AYADAYA DAY ADAYADAYA DAYADAY ADAYADAYA DAYAD AYADAYADAY ADAYADAYAD AYADAYA DAY ADAYADAYA DAYADAY ADAYADAYA DAYAD AYADA
         BTW
         TOM IS NOT HOT
     </div>
-    <div class = "text">
-        <p>LOREM ISPUM</p>
-    </div>    
+
+    <button id="1" class="text" onclick="buttonClick()">FACT 1</button>
+    <button id="2" class="text" onclick="buttonClick()">FACT 2</button>
+    <button id="3" class="text" onclick="buttonClick()">FACT 3</button>
+    <button id="4" class="text" onclick="buttonClick()">FACT 4</button>
+    <button id="5" class="text" onclick="buttonClick()">FACT 5</button>
+
+    <img onclick="imageClick()" class="image" id="img1" src="testIMG.png">
+
+    <script>
+        function buttonClick(){
+            pic = document.getElementById("img1");
+            pic.style.display = "block"
+        }
+
+        function imageClick(){
+            pic = document.getElementById("img1");
+            pic.style.display = "none"
+        }
+
+
+        count = 5000;
+        iteration = 0;
+
+        items = document.getElementsByClassName("text");
+        stepSize = count / items.length
+
+        function step() {
+
+            height = window.innerHeight;
+            width = window.innerWidth;
+            
+            
+            ellipseHeight = height/2*0.6;
+            ellipseWidth = width/2*0.6
+            
+
+            for (let i = 0; i < items.length; i++) {
+                b = iteration+(i * stepSize)
+                t = (2 * Math.PI / count) * b 
+                x = ellipseWidth * Math.cos(t);
+                y = ellipseHeight * Math.sin(t);
+
+                x += width/2
+                y += height/2
+
+                x = x.toString() + "px";
+                y = y.toString() + "px";
+                
+                test = items[i];
+                test.style.position = "absolute";
+                test.style.left = x;
+                test.style.top = y;
+            }
+            
+            iteration += 1;
+            window.requestAnimationFrame(step);
+        }   
+        window.requestAnimationFrame(step);
+    
+    </script>
 </body>
 </html>
