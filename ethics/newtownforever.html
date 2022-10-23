@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SLAY</title>
+    <link rel="stylesheet" href="newtownforever.css">
+
+</head>
+<body>
+    <img onclick="buttonClick(this.id)" class="abstract" id="0" src="pics/mainText.jpg">
+    <img onclick="imageClick(this.id)" class="text" id="img0" src="pics/mainText.jpg   ">
+
+ 
+    <img onclick="buttonClick(this.id)" class="thumbnails" id="1" src="pics/argument1Thumbnail.png">
+    <img onclick="imageClick(this.id)" class="text" id="img1" src="pics/argument1.jpg">
+    
+    <img onclick="buttonClick(this.id)" class="thumbnails" id="2" src="pics/argument1Thumbnail.png">
+    <img onclick="imageClick(this.id)" class="text" id="img2" src="pics/argument1.jpg">
+    
+    <img onclick="buttonClick(this.id)" class="thumbnails" id="3" src="pics/argument1Thumbnail.png">
+    <img onclick="imageClick(this.id)" class="text" id="img3" src="pics/argument1.jpg">
+    
+    <img onclick="buttonClick(this.id)" class="thumbnails" id="4" src="pics/argument1Thumbnail.png">
+    <img onclick="imageClick(this.id)" class="text" id="img4" src="pics/argument1.jpg">
+
+    <img onclick="buttonClick(this.id)" class="thumbnails" id="5" src="pics/argument1Thumbnail.png">
+    <img onclick="imageClick(this.id)" class="text" id="img5" src="pics/argument1.jpg"> 
+
+    
+    <script>
+        function buttonClick(clickedID){
+            newID = "img" + clickedID.toString();
+            pic = document.getElementById(newID);
+            pic.style.display = "block"
+        }
+
+        function imageClick(clickedID){
+            pic = document.getElementById(clickedID);
+            pic.style.display = "none"
+        }
+
+
+        count = 5000;
+        iteration = 0;
+
+        items = document.getElementsByClassName("thumbnails");
+        stepSize = count / items.length
+
+
+        function step() {
+
+            height = window.innerHeight;
+            width = window.innerWidth;
+
+            objectwidth = 0.1 * width / 2 ;            
+            objectheight = objectwidth / 2;
+
+            ellipseHeight = height/2*0.6;
+            ellipseWidth = width/2*0.6
+            
+
+            for (let i = 0; i < items.length; i++) {
+                b = iteration+(i * stepSize)
+                t = (2 * Math.PI / count) * b 
+                x = ellipseWidth * Math.cos(t);
+                y = ellipseHeight * Math.sin(t);
+
+                x += width/2 - objectwidth
+                y += height/2 - objectheight
+
+                x = x.toString() + "px";
+                y = y.toString() + "px";
+                
+                test = items[i];
+                test.style.position = "absolute";
+                test.style.left = x;
+                test.style.top = y;
+            }
+            
+            iteration += 1;
+            window.requestAnimationFrame(step);
+        }   
+        window.requestAnimationFrame(step);
+    
+    </script>
+</body>
+</html>

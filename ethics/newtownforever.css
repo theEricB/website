@@ -1,0 +1,26 @@
+.abstract{
+    width: 20vw;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+}
+
+.thumbnails{
+    cursor: pointer;
+    width: 10vw;
+}
+
+.text{
+    /* height: 95vh; */
+    width: 95vw;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+    cursor: pointer;
+    z-index: 100;
+
+}
