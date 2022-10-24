@@ -10,11 +10,11 @@
     width: 90vw;
     color: white;
     background-color: rgb(0, 0, 255);
-    font-size: 18pt;
+    font-size: 16pt;
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -40%);
     display: none;
     z-index: 500;
 }
