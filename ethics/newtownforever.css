@@ -31,6 +31,8 @@
     top: 50%;
     left: 50%;
     transform: translate(-35vw, -35vh);
+    max-width: 20vw;
+    max-height: 20vh;
 }
 #button2{
     cursor: pointer;
