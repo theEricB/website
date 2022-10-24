@@ -1,11 +1,44 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+
 .abstract{
-    width: 20vw;
+    height: 80vh;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-
 }
+
+#button1{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-35vw, -35vh);
+}
+#button2{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(35vw, -35vh);
+}
+#button3{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-35vw, 35vh);
+}
+#button4{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(35vw, 35vh);
+}
+
 
 .thumbnails{
     cursor: pointer;
@@ -22,4 +55,166 @@
     display: none;
     cursor: pointer;
     z-index: 100;
+}
+
+
+#background{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgb(255, 255, 0);
+    opacity: 0.5;
+}
+
+
+#div1{
+    width: 20%;
+    height: 20%;
+    background-image: url("backgrounds/01.jpg");
+    background-size: 100%;
+}
+#div2{
+    width: 20%;
+    height: 20%;
+    background-image: url("backgrounds/02.jpg");
+    background-size: 100%;
+}
+#div3{
+    width: 20%;
+    height: 20%;
+    background-image: url("backgrounds/03.jpg");
+    background-size: 100%;
+}
+#div4{
+    width: 20%;
+    height: 20%;
+    background-image: url("backgrounds/04.jpg");
+    background-size: 100%;
+}
+#div5{
+    width: 20%;
+    height: 20%;
+    background-image: url("backgrounds/05.jpg");
+    background-size: 100%;
+}
+#div6{
+    width: 20%;
+    height: 20%;
+    background-image: url("backgrounds/06.jpg");
+    background-size: 100%;
+}
+#div7{
+    width: 20%;
+    height: 20%;
+    background-image: url("backgrounds/07.jpg");
+    background-size: 100%;
+}
+#div8{
+    width: 20%;
+    height: 20%;
+    background-image: url("backgrounds/08.jpg");
+    background-size: 100%;
+}
+#div9{
+    width: 20%;
+    height: 20%;
+    background-image: url("backgrounds/09.jpg");
+    background-size: 100%;
+}
+#div10{
+    width: 20%;
+    height: 20%;
+    background-image: url("backgrounds/10.jpg");
+    background-size: 100%;
+}
+#div11{
+    width: 20%;
+    height: 20%;
+    background-image: url("backgrounds/11.jpg");
+    background-size: 100%;
+}
+#div12{
+    width: 20%;
+    height: 20%;
+    background-image: url("backgrounds/12.jpg");
+    background-size: 100%;
+}
+#div13{
+    width: 20%;
+    height: 20%;
+    background-image: url("backgrounds/13.jpg");
+    background-size: 100%;
+}
+#div14{
+    width: 20%;
+    height: 20%;
+    background-image: url("backgrounds/14.jpg");
+    background-size: 100%;
+}
+#div15{
+    width: 20%;
+    height: 20%;
+    background-image: url("backgrounds/15.jpg");
+    background-size: 100%;
+}
+#div16{
+    width: 20%;
+    height: 20%;
+    background-image: url("backgrounds/16.jpg");
+    background-size: 100%;
+}
+#div17{
+    width: 20%;
+    height: 20%;
+    background-image: url("backgrounds/17.jpg");
+    background-size: 100%;
+}
+#div18{
+    width: 20%;
+    height: 20%;
+    background-image: url("backgrounds/18.jpg");
+    background-size: 100%;
+}
+#div19{
+    width: 20%;
+    height: 20%;
+    background-image: url("backgrounds/19.jpg");
+    background-size: 100%;
+}
+#div20{
+    width: 20%;
+    height: 20%;
+    background-image: url("backgrounds/20.jpg");
+    background-size: 100%;
+}
+#div21{
+    width: 20%;
+    height: 20%;
+    background-image: url("backgrounds/21.jpg");
+    background-size: 100%;
+}
+#div22{
+    width: 20%;
+    height: 20%;
+    background-image: url("backgrounds/22.jpg");
+    background-size: 100%;
+}
+#div23{
+    width: 20%;
+    height: 20%;
+    background-image: url("backgrounds/23.jpg");
+    background-size: 100%;
+}
+#div24{
+    width: 20%;
+    height: 20%;
+    background-image: url("backgrounds/24.jpg");
+    background-size: 100%;
+}
+#div25{
+    width: 20%;
+    height: 20%;
+    background-image: url("backgrounds/25.jpg");
+    background-size: 100%;
 }

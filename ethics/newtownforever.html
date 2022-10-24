@@ -9,10 +9,50 @@
 
 </head>
 <body>
-    <img onclick="buttonClick(this.id)" class="abstract" id="0" src="pics/mainText.jpg">
-    <img onclick="imageClick(this.id)" class="text" id="img0" src="pics/mainText.jpg   ">
 
- 
+
+    <div id="background">
+        <div id="div1"></div>
+        <div id="div2"></div>
+        <div id="div3"></div>
+        <div id="div4"></div>
+        <div id="div5"></div>
+        <div id="div6"></div>
+        <div id="div7"></div>
+        <div id="div8"></div>
+        <div id="div9"></div>
+        <div id="div10"></div>
+        <div id="div11"></div>
+        <div id="div12"></div>
+        <div id="div13"></div>
+        <div id="div14"></div>
+        <div id="div15"></div>
+        <div id="div16"></div>
+        <div id="div17"></div>
+        <div id="div18"></div>
+        <div id="div19"></div>
+        <div id="div20"></div>
+        <div id="div21"></div>
+        <div id="div22"></div>
+        <div id="div23"></div>
+        <div id="div24"></div>
+        <div id="div25"></div>
+    </div>
+
+
+    <img class="abstract" src="pics/mainText.jpg">
+
+    <img id="button1" onclick="showText()" src="pics/more.jpg">
+    <img id="button2" onclick="showText()" src="pics/more.jpg">
+    <img id="button3" onclick="showText()" src="pics/more.jpg">
+    <img id="button4" onclick="showText()" src="pics/more.jpg">
+
+
+
+
+
+    
+<!-- 
     <img onclick="buttonClick(this.id)" class="thumbnails" id="1" src="pics/argument1Thumbnail.png">
     <img onclick="imageClick(this.id)" class="text" id="img1" src="pics/argument1.jpg">
     
@@ -25,11 +65,24 @@
     <img onclick="buttonClick(this.id)" class="thumbnails" id="4" src="pics/argument1Thumbnail.png">
     <img onclick="imageClick(this.id)" class="text" id="img4" src="pics/argument1.jpg">
 
-    <img onclick="buttonClick(this.id)" class="thumbnails" id="5" src="pics/argument1Thumbnail.png">
-    <img onclick="imageClick(this.id)" class="text" id="img5" src="pics/argument1.jpg"> 
-
+    <img onclick="textClickOn(this.id)" class="thumbnails" id="5" src="pics/argument1Thumbnail.png">
+    <div onclick="textClickOff(this.id)" id="img5"> </div> -->
     
     <script>
+        function textClickOn(clickedID){
+            console.log("clicked");
+            newID = "img" + clickedID.toString();
+            div = document.getElementById(newID);
+            text = document.createElement("h1")
+            text.innerHTML = "bhujkhjbkkhbjiokikbiokbiok"
+            div.appendChild(text);
+        }
+
+        function textClickOff(clickedID){
+            div = document.getElementById(clickedID);
+            div.innerHTML = "";
+        }
+
         function buttonClick(clickedID){
             newID = "img" + clickedID.toString();
             pic = document.getElementById(newID);
