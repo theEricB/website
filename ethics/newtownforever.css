@@ -28,7 +28,7 @@
 }
 
 #button1{
-    width: 13vw;
+    width: 5vw;
     height: auto;
     cursor: pointer;
     position: absolute;
@@ -40,7 +40,7 @@
     z-index: 5;
 }
 #button2{
-    width: 13vw;
+    width: 2vw;
     height: auto;
     cursor: pointer;
     position: absolute;
