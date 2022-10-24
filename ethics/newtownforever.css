@@ -24,9 +24,12 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    z-index: 10;
 }
 
 #button1{
+    width: 13vw;
+    height: auto;
     cursor: pointer;
     position: absolute;
     top: 50%;
@@ -34,47 +37,60 @@
     transform: translate(-35vw, -35vh);
     max-width: 20vw;
     max-height: 20vh;
+    z-index: 5;
 }
 #button2{
+    width: 13vw;
+    height: auto;
     cursor: pointer;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(35vw, -35vh);
+    z-index: 5;
 }
 #button3{
+    width: 13vw;
+    height: auto;
     cursor: pointer;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-35vw, 35vh);
+    z-index: 5;
 }
 #button4{
+    width: 13vw;
+    height: auto;
     cursor: pointer;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(35vw, 35vh);
+    z-index: 5;
 }
 #button5{
+    width: 13vw;
+    height: auto;
     cursor: pointer;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(35vw, 0pt);
+    z-index: 5;
 }
 #button6{
+    width: 13vw;
+    height: auto;
     cursor: pointer;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-35vw, 0pt);
+    z-index: 5;
 }
 
-.thumbnails{
-    cursor: pointer;
-    width: 10vw;
-}
+
 
 .text{
     max-width: 95vw;
@@ -96,6 +112,7 @@
     height: 100vh;
     background-color: rgb(255, 255, 0);
     opacity: 0.5;
+    z-index: 1;
 }
 
 
