@@ -8,8 +8,8 @@
     font-family: Arial, Helvetica, sans-serif;
     cursor: pointer;
     width: 90vw;
-    
-    background-color: rgba(255, 255, 255, 1);
+    color: white;
+    background-color: rgb(0, 0, 255);
     font-size: 80px;
     position: absolute;
     top: 50%;
@@ -97,6 +97,7 @@
     background-color: rgb(255, 255, 0);
     opacity: 0.5;
 }
+
 
 
 #div1{
