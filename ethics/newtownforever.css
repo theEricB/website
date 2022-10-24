@@ -4,7 +4,18 @@
     box-sizing: border-box;
 }
 
-
+.paragraph{
+    cursor: pointer;
+    width: 90vw;
+    height:90vh;
+    background-color: rgba(255, 255, 255, 0.852);
+    font-size: 200px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+}
 
 .abstract{
     height: 80vh;
@@ -15,24 +26,28 @@
 }
 
 #button1{
+    cursor: pointer;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-35vw, -35vh);
 }
 #button2{
+    cursor: pointer;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(35vw, -35vh);
 }
 #button3{
+    cursor: pointer;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-35vw, 35vh);
 }
 #button4{
+    cursor: pointer;
     position: absolute;
     top: 50%;
     left: 50%;
