@@ -3,15 +3,10 @@
     font-family: Arial, sans-serif;
 }
 
-
-
-#grid{
- 
-    margin: 35px;
-    display: flex;
-    flex-wrap: wrap;
-    
-
+#container{
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
 
 }
 
@@ -28,21 +23,21 @@
 
 
 .project {
-    max-width: 300px;
     position: relative;
-    margin: 10px;
+    margin-top: 50px;
+    margin-left: 35px;
+    margin-right: 35px;
     border: 10px;
-    background-color: beige;
 
 } 
 
-.pics{
+.project input{
     transition: all .3s ease-in-out;
-    max-width: 300px;
+    max-width: 100%;
     border-radius: 2%;
-    border-color: aliceblue;
+    border-color: rgb(158, 158, 158);
     border-style: outset;
-    border-width: 2px;
+    border-width: 1.5px;
     
 }
 
