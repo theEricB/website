@@ -40,18 +40,30 @@
     font-weight: bold;
     font-size: x-large;
 }
-/* 
-#greatings div{
-    margin-top: 50vh;
-    transform: translateY(-20%);
-    height: 50vh;
-} */
+
 #white{
     color: rgb(255, 255, 255);
 }
 
+#categories{
+    margin: 35px;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.buttons{
+    margin-right: 15px;
+    font-size: larger;
+    color: grey;
+    border-radius: 10px;
+    border-color: transparent;
+    background-color: rgb(60, 60, 60);
+}
+
 
 .project {
+    transition: all .3s ease-in-out;
+
     overflow: visible;
     position: relative;
     margin: 35px;

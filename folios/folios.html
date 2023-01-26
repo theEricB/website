@@ -20,59 +20,78 @@
         </div>
 
 
+        <div id="categories">
+            <button id="b0" onclick="buttonClicked(this)" class="buttons" style="background-color: white; color: black;">all</button>
+            <button id="b1" onclick="buttonClicked(this)" class="buttons">student</button>
+            <button id="b2" onclick="buttonClicked(this)" class="buttons">professional</button>
+            <button id="b3" onclick="buttonClicked(this)" class="buttons">personal</button>
+
+        </div>
+
  
 
-        <div class="project">>
+        <div class="project" onclick="window.open('projects/membrane.html', '_self');"
+            data-categories = "01">
             <input type="image" src="img/membrane.jpg" />
-            <h1 onclick="window.open('projects/membrane.html', '_self');">Reusable Membrane</h1>
+            <h1>Reusable Membrane</h1>
         </div>   
         
-        <div class="project" onclick="onClick(this)">
+        <div class="project" onclick="onClick(this)"
+        data-categories = "02">
             <input type="image" src="img/paname.jpg" />
             <h1>Le Paname Paris</h1>
         </div>   
 
-        <div class="project" onclick="onClick(this)">
+        <div class="project" onclick="onClick(this)"
+        data-categories = "01">
             <input type="image" src="img/pomo.jpg" />
             <h1>Digital Biennale 1980</h1>
         </div>   
 
-        <div class="project" onclick="onClick(this)">
+        <div class="project" onclick="onClick(this)"
+        data-categories = "03">
             <input type="image" src="img/dla.jpg" />
             <h1>Computational Explorations</h1>
         </div>   
         
-        <div class="project" onclick="onClick(this)">
+        <div class="project" onclick="onClick(this)"
+        data-categories = "01">
             <input type="image" src="img/arcs.jpg" />
             <h1>A house for John Lennon</h1>
         </div>   
         
-        <div class="project" onclick="onClick(this)">
+        <div class="project" onclick="onClick(this)"
+        data-categories = "01">
             <input type="image" src="img/embassy.jpg" />
             <h1>Catalonian Embassy Stuttgart</h1>
         </div>   
 
-        <div class="project" onclick="onClick(this)">
+        <div class="project" onclick="onClick(this)"
+        data-categories = "01">
             <input type="image" src="img/kohl.jpg" />
             <h1>Computational Scuplture</h1>
         </div>  
 
-        <div class="project" onclick="onClick(this)">
+        <div class="project" onclick="onClick(this)"
+        data-categories = "01">
             <input type="image" src="img/turm.jpg" />
             <h1>Statement for Stuttgart</h1>
         </div>   
         
-        <div class="project" onclick="onClick(this)">
+        <div class="project" onclick="onClick(this)"
+        data-categories = "02">
             <input type="image" src="img/maisonMalka.jpg" />
             <h1>La maison d'Egypte Paris</h1>
         </div>   
         
-        <div class="project" onclick="onClick(this)">
+        <div class="project" onclick="onClick(this)"
+        data-categories = "02">
             <input type="image" src="img/tuer.jpg" />
             <h1>Entrance Door MPA Stuttgart</h1>
         </div>  
 
-        <div class="project" onclick="onClick(this)">
+        <div class="project" onclick="onClick(this)"
+            data-categories = "01">
             <input type="image" src="img/gracity.jpg" />
             <h1>Grasshopper City</h1>
         </div>   
@@ -81,12 +100,90 @@
     </div>
     
     <script>
-        function onClick(ele){
-            name = ele.firstElementChild.src;
-            var split = name.split("/");
-            var split = split[split.length - 1].split(".")[0];
+        let activeCategories = ['0']
 
+        function decolor(item){
+            b = document.getElementById("b" + item)
+            b.style.backgroundColor= "rgb(60, 60, 60)";
+            b.style.color = "grey";
         }
+
+        function buttonClicked(ele){
+            const style = getComputedStyle(ele);
+            const test = style.backgroundColor;
+            const id = ele.id[1]
+
+
+            // ACTIVATE
+            if(test == "rgb(60, 60, 60)"){
+                if(id == "0"){
+                    ele.style.backgroundColor = "white";
+                    ele.style.color = "black";
+                    activeCategories.forEach(decolor)
+                    activeCategories = ["0"];
+                }
+
+                else{
+                    ele.style.backgroundColor = "white";
+                    ele.style.color = "black";
+                    activeCategories.push(id);
+
+                    if (id != "0" && activeCategories[0] == "0"){
+                        allButton = document.getElementById("b0")
+                        allButton.style.backgroundColor= "rgb(60, 60, 60)";
+                        allButton.style.color = "grey";
+                        var index = activeCategories.indexOf("0");
+                        activeCategories.splice(index, 1);
+                    }
+                }
+            }
+
+            // DEACTIVATE
+            else{
+                ele.style.backgroundColor= "rgb(60, 60, 60)";
+                ele.style.color = "grey";
+                var index = activeCategories.indexOf(id);
+                console.log(index);
+                activeCategories.splice(index, 1);
+                
+            }
+            
+            // REACTIVATE WHITE 
+            if(activeCategories.length == 0){
+                allButton = document.getElementById("b0")
+                allButton.style.backgroundColor = "white";
+                allButton.style.color = "black";
+                activeCategories.unshift("0");
+            }
+
+            
+            
+
+            allProjects = document.getElementsByClassName("project");
+            console.log(allProjects[0])
+
+            for (let i=0; i < allProjects.length; i++){
+                item = allProjects[i]
+                cat = item.dataset.categories
+                let categories = cat.split("");
+                console.log(categories)
+                let check = false
+                for (let j=0; j < categories.length; j++){
+                    for (let t=0; t < activeCategories.length; t++){
+                        if (categories[j] == activeCategories[t]){
+                            check = true
+                            item.style.display = "block";
+                            break
+                        }
+                    }   
+                }
+                if(check == false){
+                    item.style.display= "none"
+                }
+            }
+            
+
+            }
     </script>
 
 </body>
