@@ -63,7 +63,6 @@
 
 .project {
     transition: all .3s ease-in-out;
-
     overflow: visible;
     position: relative;
     margin: 35px;
