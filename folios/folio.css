@@ -46,13 +46,18 @@
 }
 
 #categories{
-    margin: 35px;
+    margin: 25px;
     display: flex;
     justify-content: flex-start;
+    flex-wrap: wrap;
 }
 
 .buttons{
-    margin-right: 15px;
+    overflow: visible;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 10px;
+    padding: 2;
     font-size: larger;
     color: grey;
     border-radius: 10px;
