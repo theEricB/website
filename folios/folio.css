@@ -47,8 +47,9 @@
 
 
 #sorted{
-    margin: 35px;
+    margin-right: 35px;
     color: rgb(94, 94, 94);
+    text-align: right;
 }
 
 #categories{
