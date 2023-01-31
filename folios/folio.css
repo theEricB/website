@@ -45,6 +45,12 @@
     color: rgb(255, 255, 255);
 }
 
+
+#sorted{
+    margin: 35px;
+    color: rgb(94, 94, 94);
+}
+
 #categories{
     margin: 25px;
     display: flex;
