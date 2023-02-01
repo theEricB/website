@@ -46,6 +46,19 @@
 }
 
 
+#me{
+    margin: 35px;
+    margin-top: 60px;
+    display: flex;
+    justify-content: center;
+}
+
+#me img{
+    transition: all .3s ease-in-out;
+}
+
+
+
 #sorted{
     margin-right: 35px;
     color: rgb(94, 94, 94);

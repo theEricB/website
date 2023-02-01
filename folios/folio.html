@@ -16,6 +16,9 @@
 <body>
     <div id="scrollstyle">
     <div id="container">
+        <div id="me">
+            <img id="mePic" src="img/eb.png">
+        </div>
         <div id="greatings"> 
             <div id="text">
             <span id="white">Hi. I'm Erik, and this is my blog.</span>
@@ -24,6 +27,8 @@
             </span>
             </div>
         </div>
+
+  
 
 
         <div id="categories">
@@ -144,6 +149,52 @@
     </div>
     
     <script>
+
+
+    // PIC ANIMATION
+    pic = document.getElementById("mePic");
+    pic.style.width = "33%";
+    // pic.style.rotate = scale.toString() + "deg";
+    let iteration = 0;
+    let scale = 0;
+
+    var mousedownID = -1;  //Global ID of mouse down interval
+    function mousedown(event) {
+    if(mousedownID==-1)  //Prevent multiple loops!
+        mousedownID = setInterval(whilemousedown, 9 /*execute every 10ms*/);
+    }
+
+    function mouseup(event) {
+    if(mousedownID!=-1) {  //Only stop if exists
+        clearInterval(mousedownID);
+        mousedownID=-1;
+        scale = 0;
+        iteration = 0;
+        pic.style.rotate = scale.toString() + "deg";
+    }
+    }
+
+
+    function whilemousedown() {
+        scale = Math.pow(iteration, 2) * 0.03;
+        pic.style.rotate = scale.toString() + "deg";
+    
+        iteration += 1;
+    }
+
+
+
+    //Assign events
+    pic.addEventListener("mouseover", mousedown);
+    pic.addEventListener("mouseout", mouseup);
+
+
+
+
+
+
+    // SORTING ALGORITHM 
+
         let activeCategories = ['0']
 
         function decolor(item){
