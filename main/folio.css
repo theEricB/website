@@ -6,20 +6,20 @@ html, body {
 }
 
 
-#container{
-    margin-left: auto;
-    margin-right: auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 50px;
-}
+
 
 
 /* ---------------------------- DESKTOP --------------------------- */
 
 @media (min-width: 801px)  { 
-
+    #container{
+        margin-left: auto;
+        margin-right: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 50px;
+    }
     
 
     #scrollstyle{
@@ -160,6 +160,11 @@ html, body {
 
 
 @media (max-width: 800px)  { 
+    #container{
+        margin-left: 10vw;
+        margin-right: 10vh;
+        margin-bottom: 50px;
+    }
 
     #scrollstyle{
         height:100vh;
@@ -188,7 +193,7 @@ html, body {
 
     #me{
         width: 95%;
-        margin-top: 3vw;
+        margin-top: 10vw;
         display: flex;
         justify-content: left;
     }
@@ -235,14 +240,10 @@ html, body {
     
     #projects {
         display: flex;
-        width: 95vw;
+        width: 100%;
         flex-wrap: wrap;
         justify-content: space-between;
 
-
-        /* grid-template-columns: 50% 50%;
-        grid-template-rows: max-content; 
-        background-color: bisque;   */
     }
     
     .project{
