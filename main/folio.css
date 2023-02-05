@@ -151,6 +151,13 @@ html, body {
 
     }
 
+    .footerMenu {
+        text-decoration: underline;    
+    }
+
+    .footerMenu:hover{
+        cursor: pointer;
+    }
 }
 
 
@@ -271,6 +278,10 @@ html, body {
         margin-top: 2vw;
         margin-bottom: 50px;
     
+    }
+
+    .footerMenu{
+        text-decoration: underline;    
     }
     
 }
