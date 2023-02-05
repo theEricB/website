@@ -246,17 +246,16 @@ html, body {
     }
     
     .project{
-        width: 45vw;
-        height: 34vw;
+        width: 80vw;
+        height: 60vw;
         margin-bottom: 4vh;
+        /* background-color: blue; */
     }
     
     .project input{
-        width: 45vw;
+        width: 80vw;
         height: auto;
-        border: solid;
         border-radius: 2vh;
-        border-width: 1px;
     }
     
     
