@@ -16,25 +16,19 @@
 <body>
     <div id="scrollstyle">
     <div id="container">
-        <!-- <div id="top"> -->
+
         <div id="me">
-            <img id="mePic" src="img/eb.png">
+            <img id="mePic" src="eb.png">
         </div>
         <div id="greatings"> 
-            <div id="text">
-            <span id="white">Hi. I'm Erik, and this is my blog.</span>
-            <span> Here I share finished and unfinished projects. 
-            These I did either as a student, a professional or just as a normal human. 
-            </span>
-            </div>
+            <span>Hi, I'm Erik.</span>
         </div>
-        <!-- </div> -->
 
   
 
 
         <div id="categories">
-            <button id="b0" onclick="buttonClicked(this)" class="buttons" style="background-color: white; color: black;">all</button>
+            <button id="b0" onclick="buttonClicked(this)" class="buttons" style="background-color: rgb(30, 30, 30); color: rgb(214, 214, 214);">all</button>
             <button id="b1" onclick="buttonClicked(this)" class="buttons">student</button>
             <button id="b2" onclick="buttonClicked(this)" class="buttons">professional</button>
             <button id="b3" onclick="buttonClicked(this)" class="buttons">personal</button>
@@ -67,6 +61,13 @@
 
 
         <!-- 2021 -->
+
+        <div class="project" onclick="onClick(this)"
+        data-categories = "01">
+            <input type="image" src="img/gego.jpg" />
+            <h1>Reimagining Gego</h1>
+        </div> 
+
         
         <div class="project" onclick="onClick(this)"
         data-categories = "03">
@@ -75,6 +76,7 @@
         </div>   
 
         <!-- 2020 -->
+
 
         <!-- 2019 --> 
         <div class="project" onclick="onClick(this)"
@@ -141,11 +143,13 @@
             <input type="image" src="img/arcs.jpg" />
             <h1>A house for John Lennon</h1>
         </div>
-        <div class="project" ></div>
-
     </div>
 
  
+    <div id="footer">
+        <p>Erik Bauscher</p>
+        <p>2023</p>
+    </div>
  
 
     </div>
@@ -153,10 +157,22 @@
     
     <script>
 
+    // change pathname for projects
+    projects = document.getElementsByClassName("project")
+    
+    Array.from(projects).forEach(element => {
+        // console.log(element)
+        const image = element.getElementsByTagName('input')[0];
+        let source = image.src;
+        let newSource = source.replace("img", "43images");
+        image.src = newSource;
+        
+    });
+
 
     // PIC ANIMATION
     pic = document.getElementById("mePic");
-    pic.style.width = "33%";
+    // pic.style.width = "33%";
     // pic.style.rotate = scale.toString() + "deg";
     let iteration = 0;
     let scale = 0;
@@ -201,34 +217,35 @@
 
         function decolor(item){
             b = document.getElementById("b" + item)
-            b.style.backgroundColor= "rgb(60, 60, 60)";
-            b.style.color = "grey";
+            b.style.backgroundColor= "rgb(214, 214, 214)";
+            b.style.color = "rgb(30, 30, 30)";
         }
 
         function buttonClicked(ele){
             const style = getComputedStyle(ele);
             const test = style.backgroundColor;
+            // console.log(test)
             const id = ele.id[1]
 
 
             // ACTIVATE
-            if(test == "rgb(60, 60, 60)"){
+            if(test == "rgb(214, 214, 214)"){
                 if(id == "0"){
-                    ele.style.backgroundColor = "white";
-                    ele.style.color = "black";
+                    ele.style.backgroundColor = "rgb(30, 30, 30)";
+                    ele.style.color = "white";
                     activeCategories.forEach(decolor)
                     activeCategories = ["0"];
                 }
 
                 else{
-                    ele.style.backgroundColor = "white";
-                    ele.style.color = "black";
+                    ele.style.backgroundColor = "rgb(30, 30, 30)";
+                    ele.style.color = "white";
                     activeCategories.push(id);
 
                     if (id != "0" && activeCategories[0] == "0"){
                         allButton = document.getElementById("b0")
-                        allButton.style.backgroundColor= "rgb(60, 60, 60)";
-                        allButton.style.color = "grey";
+                        allButton.style.backgroundColor= "rgb(214, 214, 214)";
+                        allButton.style.color = "rgb(30, 30, 30)";
                         var index = activeCategories.indexOf("0");
                         activeCategories.splice(index, 1);
                     }
@@ -237,8 +254,8 @@
 
             // DEACTIVATE
             else{
-                ele.style.backgroundColor= "rgb(60, 60, 60)";
-                ele.style.color = "grey";
+                ele.style.backgroundColor= "rgb(214, 214, 214)";
+                ele.style.color = "rgb(30, 30, 30)";
                 var index = activeCategories.indexOf(id);
                 // console.log(index);
                 activeCategories.splice(index, 1);
@@ -248,8 +265,8 @@
             // REACTIVATE WHITE 
             if(activeCategories.length == 0){
                 allButton = document.getElementById("b0")
-                allButton.style.backgroundColor = "white";
-                allButton.style.color = "black";
+                allButton.style.backgroundColor = "rgb(30, 30, 30)";
+                allButton.style.color = "white";
                 activeCategories.unshift("0");
             }
 

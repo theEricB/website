@@ -1,6 +1,6 @@
-import { PointerLockControls } from "./modules/PointerLockControls.js";
-import { GLTFLoader } from './modules/GLTFLoader.js';
-import { SpotLight } from "./modules/three.module.js";
+import { PointerLockControls } from "../modules/PointerLockControls.js";
+import { GLTFLoader } from '../modules/GLTFLoader.js';
+import { SpotLight } from "../modules/three.module.js";
 
 
 
