@@ -15,45 +15,26 @@
         <p>ongoing project</p>
     </div>
 
+    <!-- ----------------------------------- -->
     <div id ="contentAll">
-        <div id ="contentRow">
-            <div class="contentRowImg">
-                <img id="img" src="src/arthouse/1.jpg">
-            </div>
 
-            <div class="contentRowText">
-                <div id="txt1" class="visibleText">
-                    <p>interior render</p>
+        <div id="1" class="picandtext">    
+            <img id="img0" src="src/arthouse/1.jpg">
+            <img id="img1" src="src/arthouse/2.jpg" style="display: none;">
+
+            
+            <div class="text">
+                <div class="navigationRow">
+                    <button id="left" onclick="changeContent(this)">&#x3c;</button> 
+                    <button id="right" onclick="changeContent(this)">&#x3e;</button> 
                 </div>
-                <div id="txt2" class="invisibleText">
-                    <p>interior render</p>
-                </div>
-                <div id="txt3" class="invisibleText">
-                    <p>plan</p>
-                    <p>original scale 1:100</p>
-                </div>
-                <div id="txt4" class="invisibleText">
-                    <p>west elevation</p>
-                    <p>original scale 1:100</p>
-                </div>
-                <div id="txt5" class="invisibleText">
-                    <p>north elevation</p>
-                    <p>original scale 1:100</p>
-                </div>
-                <div id="txt6" class="invisibleText">
-                    <p>east elevation</p>
-                    <p>original scale 1:100</p>
-                </div>
-                <div id="txt7" class="invisibleText">
-                    <p>south elevation</p>
-                    <p>original scale 1:100</p>
-                </div>
-            </div>
+                <p id="text0">interior render</p>
+                <p id="text1" style="display: none;">interior render</p>
+
+            </div> 
         </div>
-        <div class="navigationRow">
-            <button id="left" onclick="changeContent(this)">&#x3c;</button>
-            <button id="right" onclick="changeContent(this)">&#x3e;</button>
-        </div>
+
+
     
     </div>
 
@@ -67,6 +48,8 @@
         <p class="footerMenu" onclick="window.open('../cv.html', '_self');">cv</p>
         <p class="footerMenu" onclick="window.open('../about.html', '_self');">about</p>
     </div>
+
+    <!-- ---------------------------------------------------------------------------------------- -->
 
 
     <script>
