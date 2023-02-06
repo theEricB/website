@@ -1,0 +1,15 @@
+#grid{
+    background-color: rgb(241, 189, 120);
+    margin: 35px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+#grid h1{
+    background-color: aqua;
+    text-align: center;
+    min-width: 100px;
+    max-width: 200px;
+    margin: 10px;
+}

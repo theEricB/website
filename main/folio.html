@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>folios</title>
+    <link href="folio.css" rel="stylesheet">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="../logo/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../logo/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../logo/favicon-16x16.png">
+    <link rel="manifest" href="../logo/site.webmanifest">
+
+</head>
+<body>
+    <div id="scrollstyle">
+    <div id="container">
+
+        <div id="me">
+            <img id="mePic" src="eb.png">
+        </div>
+        <div id="greatings"> 
+            <span>Hi, I'm Erik.</span>
+        </div>
+
+  
+
+
+        <div id="categories">
+            <button id="b0" onclick="buttonClicked(this)" class="buttons" style="background-color: rgb(30, 30, 30); color: rgb(214, 214, 214);">all</button>
+            <button id="b1" onclick="buttonClicked(this)" class="buttons">architecture</button>
+            <button id="b2" onclick="buttonClicked(this)" class="buttons">art</button>
+            <button id="b3" onclick="buttonClicked(this)" class="buttons">realised</button>
+            <button id="b4" onclick="buttonClicked(this)" class="buttons">computational</button>            
+            <button id="b5" onclick="buttonClicked(this)" class="buttons">teaching</button>
+            <button id="b6" onclick="buttonClicked(this)" class="buttons">favorites</button>  
+        </div>
+        <!-- <p id="sorted">present - 2016</p> -->
+
+        <!-- PRJECTS -->
+        <!-- sorting: 0 -> all, 1 -> student, 2 -> professional, 3 -> hobby -->
+        
+        <!-- 2022 -->
+        <div id="projects">
+
+        <div class="project" onclick="window.open('projects/arthouse.html', '_self');"
+            data-categories = "016">
+            <input type="image" src="img/newyork.jpg" />
+            <h1>Exhibition Pavillon New York</h1>
+        </div>  
+
+        <div class="project" onclick="window.open('projects/oblique.html', '_self');"
+            data-categories = "01">
+            <input type="image" src="img/virilio.jpg" />
+            <h1>Oblique Architecture Today (Essay)</h1>
+        </div>   
+        
+        <div class="project" onclick="window.open('rien');"
+            data-categories = "046">
+            <input type="image" src="img/clay.jpg" />
+            <h1>Custom Clay 3D Printing</h1>
+        </div>   
+
+        <div class="project" onclick="window.open('../cityscapes.html', '_self');"
+            data-categories = "02">
+            <input type="image" src="img/cityscapes.jpg" />
+            <h1>Cityscapes</h1>
+        </div>
+        
+        
+        <div class="project" onclick="window.open('https://youtu.be/5zvp3-IAHmw');"
+            data-categories = "02">
+            <input type="image" src="img/vr.jpg" />
+            <h1>Space Studies</h1>
+        </div>   
+
+
+        <!-- 2021 -->
+
+        <div class="project" onclick="onClick(this)"
+        data-categories = "05">
+            <input type="image" src="img/aad.jpg" />
+            <h1>Associative and Algorithmic Design (Teaching)</h1>
+        </div> 
+
+        <div class="project" onclick="onClick(this)"
+        data-categories = "04">
+            <input type="image" src="img/jenga.jpg" />
+            <h1>Jenga playing robot</h1>
+        </div> 
+
+        <div class="project" onclick="window.open('https://www.youtube.com/watch?v=AJ3bRWF0r3E&ab_channel=theEric');"
+            data-categories = "04">
+            <input type="image" src="img/steward.jpg" />
+            <h1>Steward Platform</h1>
+        </div>   
+
+        <div class="project" onclick="window.open('https://www.researchgate.net/publication/364227270_Reimagining_Gego_Geometrical_Reconstruction_of_Nubes_an_Undocumented_and_Lost_Sculpture_from_1974');"
+        data-categories = "026">
+            <input type="image" src="img/gego.jpg" />
+            <h1>Reimagining Gego<br>(eCAADe)</h1>
+        </div> 
+
+        
+        <div class="project" onclick="onClick(this)"
+        data-categories = "04">
+            <input type="image" src="img/dla.jpg" />
+            <h1>Computational Explorations</h1>
+        </div>   
+
+        <!-- 2020 -->
+        <div class="project" onclick="onClick(this)"
+        data-categories = "01">
+            <input type="image" src="img/turkei.jpg" />
+            <h1>House on the hill</h1>
+        </div>   
+
+
+        <!-- 2019 --> 
+        <div class="project" onclick="onClick(this)"
+        data-categories = "0134">
+            <input type="image" src="img/pomo.jpg" />
+            <h1>Digital Biennale 1980</h1>
+        </div>   
+
+
+        <div class="project" onclick="onClick(this)"
+        data-categories = "01">
+            <input type="image" src="img/tuer.jpg" />
+            <h1>Entrance Door MPA Stuttgart</h1>
+        </div> 
+
+        <!-- 2018 -->
+                
+        <div class="project" onclick="onClick(this)"
+        data-categories = "01346">
+            <input type="image" src="img/paname.jpg" />
+            <h1>Le Paname Paris</h1>
+        </div>   
+        
+        <div class="project" onclick="onClick(this)"
+        data-categories = "01">
+            <input type="image" src="img/maisonMalka.jpg" />
+            <h1>La maison d'Egypte Paris</h1>
+        </div>   
+
+        <div class="project" onclick="onClick(this)"
+        data-categories = "024">
+            <input type="image" src="img/kohl.jpg" />
+            <h1>Computational Scuplture</h1>
+        </div>  
+
+        <!-- 2017 -->
+        <div class="project" onclick="window.open('projects/membrane.html', '_self');"
+            data-categories = "016">
+            <input type="image" src="img/membrane.jpg" />
+            <h1>Reusable Membrane</h1>
+        </div>   
+
+        <div class="project" onclick="onClick(this)"
+        data-categories = "01">
+            <input type="image" src="img/turm.jpg" />
+            <h1>Statement for Stuttgart</h1>
+        </div>   
+        
+        <!-- 2016 -->
+        <div class="project" onclick="onClick(this)"
+            data-categories = "0146">
+            <input type="image" src="img/gracity.jpg" />
+            <h1>Grasshopper City</h1>
+        </div> 
+        
+        <div class="project" onclick="onClick(this)"
+        data-categories = "01">
+            <input type="image" src="img/embassy.jpg" />
+            <h1>Catalonian Embassy Stuttgart</h1>
+        </div>   
+
+        <div class="project" onclick="onClick(this)"
+        data-categories = "01">
+            <input type="image" src="img/arcs.jpg" />
+            <h1>A house for John Lennon</h1>
+        </div>
+    </div>
+
+ 
+    <div id="footer">
+        <p>Erik Bauscher</p>
+        <p>last update: feb 2023</p>
+        <p class="footerMenu" onclick="window.open('about.html', '_self');">about</p>
+        <p class="footerMenu" onclick="window.open('cv.html', '_self');">cv</p>
+
+    </div>
+ 
+
+    </div>
+    </div>
+    
+    <script>
+
+    // change pathname for projects
+    projects = document.getElementsByClassName("project")
+    
+    Array.from(projects).forEach(element => {
+        // console.log(element)
+        const image = element.getElementsByTagName('input')[0];
+        let source = image.src;
+        let newSource = source.replace("img", "43images");
+        image.src = newSource;
+        
+    });
+
+
+    // PIC ANIMATION
+    pic = document.getElementById("mePic");
+    // pic.style.width = "33%";
+    // pic.style.rotate = scale.toString() + "deg";
+    let iteration = 0;
+    let scale = 0;
+
+    var mousedownID = -1;  //Global ID of mouse down interval
+    function mousedown(event) {
+    if(mousedownID==-1)  //Prevent multiple loops!
+        mousedownID = setInterval(whilemousedown, 9 /*execute every 10ms*/);
+    }
+
+    function mouseup(event) {
+    if(mousedownID!=-1) {  //Only stop if exists
+        clearInterval(mousedownID);
+        mousedownID=-1;
+        scale = 0;
+        iteration = 0;
+        pic.style.rotate = scale.toString() + "deg";
+    }
+    }
+
+
+    function whilemousedown() {
+        scale = Math.pow(iteration, 2) * 0.03;
+        pic.style.rotate = scale.toString() + "deg";
+        iteration += 1;
+    }
+
+
+
+    //Assign events
+    pic.addEventListener("mouseover", mousedown);
+    pic.addEventListener("mouseout", mouseup);
+
+
+
+
+
+
+    // SORTING ALGORITHM 
+
+        let activeCategories = ['0']
+
+        function decolor(item){
+            b = document.getElementById("b" + item)
+            b.style.backgroundColor= "rgb(214, 214, 214)";
+            b.style.color = "rgb(30, 30, 30)";
+        }
+
+        function buttonClicked(ele){
+            const style = getComputedStyle(ele);
+            const test = style.backgroundColor;
+            // console.log(test)
+            const id = ele.id[1]
+
+
+            // ACTIVATE
+            if(test == "rgb(214, 214, 214)"){
+                if(id == "0"){
+                    ele.style.backgroundColor = "rgb(30, 30, 30)";
+                    ele.style.color = "white";
+                    activeCategories.forEach(decolor)
+                    activeCategories = ["0"];
+                }
+
+                else{
+                    ele.style.backgroundColor = "rgb(30, 30, 30)";
+                    ele.style.color = "white";
+                    activeCategories.push(id);
+
+                    if (id != "0" && activeCategories[0] == "0"){
+                        allButton = document.getElementById("b0")
+                        allButton.style.backgroundColor= "rgb(214, 214, 214)";
+                        allButton.style.color = "rgb(30, 30, 30)";
+                        var index = activeCategories.indexOf("0");
+                        activeCategories.splice(index, 1);
+                    }
+                }
+            }
+
+            // DEACTIVATE
+            else{
+                ele.style.backgroundColor= "rgb(214, 214, 214)";
+                ele.style.color = "rgb(30, 30, 30)";
+                var index = activeCategories.indexOf(id);
+                // console.log(index);
+                activeCategories.splice(index, 1);
+                
+            }
+            
+            // REACTIVATE WHITE 
+            if(activeCategories.length == 0){
+                allButton = document.getElementById("b0")
+                allButton.style.backgroundColor = "rgb(30, 30, 30)";
+                allButton.style.color = "white";
+                activeCategories.unshift("0");
+            }
+
+            
+            
+
+            allProjects = document.getElementsByClassName("project");
+            // console.log(allProjects[0])
+
+            for (let i=0; i < allProjects.length; i++){
+                item = allProjects[i]
+                cat = item.dataset.categories
+                let categories = cat.split("");
+                // console.log(categories)
+                let check = false
+                for (let j=0; j < categories.length; j++){
+                    for (let t=0; t < activeCategories.length; t++){
+                        if (categories[j] == activeCategories[t]){
+                            check = true
+                            item.style.display = "block";
+                            break
+                        }
+                    }   
+                }
+                if(check == false){
+                    item.style.display= "none"
+                }
+            }
+            
+
+            }
+    </script>
+
+</body>
+</html>

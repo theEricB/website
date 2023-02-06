@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>arthouse</title>
+    <link href="projects.css" rel="stylesheet">
+
+</head>
+<body>
+    <!-- title and date -->
+    <div class="titleRow">
+        <h1>arthouse</h1>
+        <p>ongoing project</p>
+    </div>
+
+    <!-- ----------------------------------- -->
+    <div id ="contentAll">
+
+        <div id="1" class="picandtext">    
+            <img id="img0" src="src/arthouse/1.jpg">
+            <img id="img1" src="src/arthouse/2.jpg" style="display: none;">
+
+            
+            <div class="text">
+                <div class="navigationRow">
+                    <button id="left" onclick="changeContent(this)">&#x3c;</button> 
+                    <button id="right" onclick="changeContent(this)">&#x3e;</button> 
+                </div>
+                <p id="text0">interior render</p>
+                <p id="text1" style="display: none;">interior render</p>
+
+            </div> 
+        </div>
+
+
+    
+    </div>
+
+
+
+    
+    <div id="footer">
+        <p>Erik Bauscher</p>
+        <p>last update: feb 2023</p>
+        <p class="footerMenu" onclick="window.open('../folio.html', '_self');">all projects</p>
+        <p class="footerMenu" onclick="window.open('../cv.html', '_self');">cv</p>
+        <p class="footerMenu" onclick="window.open('../about.html', '_self');">about</p>
+    </div>
+
+    <!-- ---------------------------------------------------------------------------------------- -->
+
+
+    <script>
+        const pictureCount = 7;
+
+
+        function changeContent(ele){
+            let image = document.getElementById("img");
+            let txt = document.getElementsByClassName("visibleText")[0];
+            txt.className = "invisibleText"
+
+            let source = image.src;
+            let index = parseInt(source[source.length-5])
+            
+            if (ele.id == "right"){
+                index += 1;
+            }
+            else{
+                index = index - 1;
+            }
+
+
+            if (index < 1){
+                index = pictureCount;
+            }
+            if (index > pictureCount){
+                index = 1;
+            }
+
+            let newPath = source.substring(0, source.length-5) + index.toString() + source.substring(source.length-5 + 1);
+            image.src = newPath;
+
+            let newTxts = Array.from(document.getElementsByClassName("invisibleText"));
+
+            newTxts.forEach((element) => {
+                if (element.id[3] == index){
+                    element.className = "visibleText";
+                }
+            });
+        };
+
+    </script>
+
+</body>
+</html>

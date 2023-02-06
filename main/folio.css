@@ -1,0 +1,287 @@
+html, body {
+    margin: 0; 
+    padding: 0;
+    font-family: Arial, sans-serif;
+    overflow: hidden;
+}
+
+
+
+
+
+/* ---------------------------- DESKTOP --------------------------- */
+
+@media (min-width: 801px)  { 
+    #container{
+        margin-left: auto;
+        margin-right: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 50px;
+    }
+    
+
+    #scrollstyle{
+        height:100vh;
+        overflow-y: auto;
+    }
+
+    #scrollstyle::-webkit-scrollbar-track {
+        box-shadow: none;
+        background-color: transparent;
+    }
+    
+    #scrollstyle::-webkit-scrollbar {
+        display: block;
+        width: 13px;
+    }
+
+    #scrollstyle::-webkit-scrollbar-thumb {
+        width: 8px;
+        border-radius: 4px;
+        background-color: rgb(214, 214, 214);
+    }
+
+    #scrollstyle::-webkit-scrollbar-button {
+        height: 1vh; 
+    }
+
+
+    #me{
+        margin: 35px;
+        margin-top: 50px;
+        display: flex;
+        justify-content: center;
+    }
+
+    #greatings{
+        color: rgb(30, 30, 30);
+        font-weight: bold;
+        font-size: x-large;
+        text-align: center;
+    }
+
+
+    #me img{
+        transition: all .3s ease-in-out;
+        max-width: 20%;
+    }
+
+
+
+    #categories{
+        margin-top: 4vw;
+        margin-bottom: 5vw;
+        display: flex;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        
+    }
+
+    .buttons{
+        overflow: visible;
+        margin-left: 10px;
+        margin-right: 10px;
+        padding: 2;
+        font-size: larger;
+        color: rgb(30, 30, 30);
+        border-radius: 1vw;
+        border-color: transparent;
+        background-color: rgb(214, 214, 214);
+        cursor: pointer;
+    }
+
+
+    #projects {
+        width: 95%;
+        display: grid;
+        grid-template-columns: 25% 25% 25% 25%;
+        grid-template-rows: auto;   
+    }
+
+    .project {
+        overflow: visible;
+        position: relative;
+        margin: 2vw;
+
+    } 
+
+
+    .project input{
+
+        height: 100%;
+        border-radius: 1vw;; 
+
+        transition: all .3s ease-in-out;
+        max-width: 100%;
+    }
+
+    .project:hover input{
+        transform: scale(1.06);  
+        opacity: 40%;
+    }
+
+
+    .project h1{
+        transition: all .3s ease-in-out;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        text-align: center;
+        margin-top: auto;
+        width: 100%;
+        opacity: 0%;
+        color: rgb(30, 30, 30);
+        font-size: large;
+        font-weight: bolder;
+    }
+
+    .project:hover h1{
+        opacity: 100%;
+        cursor: pointer;
+    } 
+
+
+    #footer{
+        margin: 1vw;
+        width: 100%;
+        text-align: center;
+        margin-top: 2vw;
+
+    }
+
+    .footerMenu {
+        text-decoration: underline;    
+    }
+
+    .footerMenu:hover{
+        cursor: pointer;
+    }
+}
+
+
+
+
+/* --------------------------------- PHONE ------------------------------------ */
+
+
+@media (max-width: 800px)  { 
+    #container{
+        margin-left: 10vw;
+        margin-right: 10vh;
+        margin-bottom: 50px;
+    }
+
+    #scrollstyle{
+        height:100vh;
+        overflow-y: auto;
+    }
+
+    #scrollstyle::-webkit-scrollbar-track {
+        box-shadow: none;
+        background-color: transparent;
+    }
+    
+    #scrollstyle::-webkit-scrollbar {
+        display: block;
+        width: 6px;
+    }
+
+    #scrollstyle::-webkit-scrollbar-thumb {
+        width: 3px;
+        border-radius: 4px;
+        background-color: rgb(214, 214, 214);
+    }
+
+    #scrollstyle::-webkit-scrollbar-button {
+        height: 1vh; 
+    }
+
+    #me{
+        width: 95%;
+        margin-top: 10vw;
+        display: flex;
+        justify-content: left;
+    }
+    
+    #greatings{
+        margin-top: 5vw;
+        width: 95%;
+        color: rgb(30, 30, 30);
+        font-weight: bold;
+        font-size: x-large; 
+    }
+    
+    
+    #me img{
+        transition: all .3s ease-in-out;
+        max-width: 10vh;
+    }
+    
+    
+    
+    #categories{
+        width: 95%;
+        margin-top: 5vw;
+        margin-bottom: 7vw;
+        display: flex;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        font-size: smaller;
+    }
+    
+    .buttons{
+        overflow: visible;
+        margin-right: 15px;
+        margin-top: 6px;
+        padding: 2;
+        font-size: larger;
+        color: rgb(30, 30, 30);
+        border-radius: 10px;
+        border-color: transparent;
+        background-color: rgb(214, 214, 214);
+        cursor: pointer;
+    }
+    
+    
+    #projects {
+        display: flex;
+        width: 100%;
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+    }
+    
+    .project{
+        width: 80vw;
+        height: 60vw;
+        margin-bottom: 4vh;
+        /* background-color: blue; */
+    }
+    
+    .project input{
+        width: 80vw;
+        height: auto;
+        border-radius: 2vh;
+    }
+    
+    
+    .project h1{
+        opacity: 0%;
+    }
+
+    
+    
+    #footer{
+        width: 95%;
+        margin-top: 2vw;
+        margin-bottom: 50px;
+    
+    }
+
+    .footerMenu{
+        text-decoration: underline;    
+    }
+    
+}
