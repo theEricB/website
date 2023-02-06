@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>where?</title>
+
+    <link rel="apple-touch-icon" sizes="180x180" href="./logo/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./logo/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./logo/favicon-16x16.png">
+    <link rel="manifest" href="./logo/site.webmanifest">
+
+
+    <script src="src/jquery.csv.min.js"></script>
+
+
+    <!-- LEAFLET -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
+    integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI="
+    crossorigin=""/>
+
+    <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
+    integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM="
+    crossorigin=""></script>
+
+    <style>
+        #map { height: 80vh; }
+    </style>
+
+</head>
+
+<body>
+
+    <div id="map"></div>
+
+    <script type="text/csv" src="wherethefuckiseric/history.csv"></script>
+    
+    <script type="module">
+
+        // map
+        var map = L.map('map').setView([30, 0], 2);
+
+        L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom: 19,
+        attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+        }).addTo(map);
+
+
+        // cities with coordinates
+        test = $.csv.toArray();
+
+
+        // history of places I have been, sorted
+
+        
+
+        // MAIN
+        const polyline = [];
+
+        for(i in history){
+            place = history[i];
+
+            // find place coordinates 
+            for(i in places){
+                endroit = places[i];
+                if (endroit.name == place.name){
+                    position = endroit.position;
+                    // finish
+                }
+            };
+
+            console.log(place.name);
+
+            // draw circle on map
+            var circle = L.circle(position, {
+            color: 'red',
+            fillColor: '#f03',
+            fillOpacity: 0.5,
+            radius: 1000
+            }).addTo(map);
+        
+            // add description
+            circle.bindPopup(place.notes);
+
+            // add coordinates to polyline list
+            // polyline.add(position);
+            polyline.push(position);
+
+        };
+
+        // add polyline
+        var polygon = L.polyline([polyline]).addTo(map);
+
+    </script>
+
+</body>
+</html>
