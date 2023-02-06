@@ -11,28 +11,55 @@
 <body>
     <!-- title and date -->
     <div class="titleRow">
-        <h1>arthouse</h1>
-        <p>ongoing project</p>
+        <h1>Exhibition Pavillon</h1>
+        <p>New York, ongoing project</p>
     </div>
 
     <!-- ----------------------------------- -->
     <div id ="contentAll">
 
-        <div id="1" class="picandtext">    
-            <img id="img0" src="src/arthouse/1.jpg">
-            <img id="img1" src="src/arthouse/2.jpg" style="display: none;">
+        <!-- <div id="1" class="picandtext"> -->
+            <div class="content">
+                <img class="imageOnly" id="content0" src="src/arthouse/1.jpg" style="display: block;">
+                <img class="imageOnly" id="content1" src="src/arthouse/2.jpg" style="display: none;">
+                <img class="imageOnly" id="content2" src="src/arthouse/3.jpg" style="display: none;">
+                <img class="imageOnly" id="content3" src="src/arthouse/5.jpg" style="display: none;">
+                <img class="imageOnly" id="content4" src="src/arthouse/6.jpg" style="display: none;"> 
+                <img class="imageOnly" id="content5" src="src/arthouse/4.jpg" style="display: none;"> 
+                <img class="imageOnly" id="content6" src="src/arthouse/7.jpg" style="display: none;"> 
+                <p id="content7" style="display: none;">HGhghuighugmbuhuhbgmhu<br>gmhubgmhbgmvhibgmvhbgmhbgmhlbg,hlb,jhulbjhljöhljhljuhöl</p> 
 
+                
+                <!--  IMAGE WITH DESCRIPTION ON SAME SLIDE 
+                
+                <div id="content4"  style="display: none;">
+                    <div class="imageText">
+                        <p>HGhghuighugmbuhuhbg<br>mhuhgmhubgmhbgmvhibgmvh<br>bgmhbgmhlbg,hlb,jhulbjhljöhljhljuhöl</p> 
+                        <img src="src/arthouse/4.jpg">
+                    </div>
+                </div> -->
             
-            <div class="text">
-                <div class="navigationRow">
-                    <button id="left" onclick="changeContent(this)">&#x3c;</button> 
-                    <button id="right" onclick="changeContent(this)">&#x3e;</button> 
-                </div>
-                <p id="text0">interior render</p>
-                <p id="text1" style="display: none;">interior render</p>
-
             </div> 
-        </div>
+            
+            <div class="description">
+                <p style="display: block;">interior render</p>
+                <p style="display: none;">interior render</p>
+                <p style="display: none;">plan</p>
+                <p style="display: none;">north elevation</p>
+                <p style="display: none;">south elevation</p>
+                <p style="display: none;">east elevation</p>
+                <p style="display: none;">west elevation</p>
+                <p style="display: none;">description</p>
+
+                <div class="navigationRow">
+                    <!-- <button id="left" onclick="changeContent(this)">&#x3c;</button> 
+                    <button id="right" onclick="changeContent(this)">&#x3e;</button>  -->
+                    <span id="back" onclick="changeContent(this)">&#x3c;</span> 
+                    <span id="forth" onclick="changeContent(this)">&#x3e;</span> 
+
+                </div>
+            </div> 
+        <!-- </div> -->
 
 
     
@@ -57,38 +84,40 @@
 
 
         function changeContent(ele){
-            let image = document.getElementById("img");
-            let txt = document.getElementsByClassName("visibleText")[0];
-            txt.className = "invisibleText"
 
-            let source = image.src;
-            let index = parseInt(source[source.length-5])
-            
-            if (ele.id == "right"){
-                index += 1;
+            let allContent = document.getElementsByClassName("content")[0];
+            let allDescription = document.getElementsByClassName("description")[0];
+
+            let count = allContent.children.length;
+            console.log(count);
+
+            let activeID;
+
+            for (const child of allContent.children) { 
+                if (child.style.display == "block"){
+                    activeID = parseInt(child.id[7]);
+                    child.style.display = "none";
+                    allDescription.children[activeID].style.display = "none";
+                };
+            };
+
+            if (ele.id == "forth"){
+                activeID += 1;
+            } else {
+                activeID -= 1;
             }
-            else{
-                index = index - 1;
+                
+            if (activeID == count){
+                activeID = 0;
+            } else if (activeID < 0){
+                activeID = count - 1;
             }
 
 
-            if (index < 1){
-                index = pictureCount;
-            }
-            if (index > pictureCount){
-                index = 1;
-            }
+            allContent.children[activeID].style.display = "block";
+            allDescription.children[activeID].style.display = "block";
 
-            let newPath = source.substring(0, source.length-5) + index.toString() + source.substring(source.length-5 + 1);
-            image.src = newPath;
 
-            let newTxts = Array.from(document.getElementsByClassName("invisibleText"));
-
-            newTxts.forEach((element) => {
-                if (element.id[3] == index){
-                    element.className = "visibleText";
-                }
-            });
         };
 
     </script>
