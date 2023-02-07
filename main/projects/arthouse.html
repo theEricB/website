@@ -18,54 +18,50 @@
     <!-- ----------------------------------- -->
     <div id ="contentAll">
 
-        <!-- <div id="1" class="picandtext"> -->
-            <div class="content">
-                <img class="imageOnly" id="content0" src="src/arthouse/8.jpg" style="display: block;">
-                <img class="imageOnly" id="content1" src="src/arthouse/2.jpg" style="display: none;">
-                <img class="imageOnly" id="content2" src="src/arthouse/3.jpg" style="display: none;">
-                <img class="imageOnly" id="content3" src="src/arthouse/5.jpg" style="display: none;">
-                <img class="imageOnly" id="content4" src="src/arthouse/6.jpg" style="display: none;"> 
-                <img class="imageOnly" id="content5" src="src/arthouse/4.jpg" style="display: none;"> 
-                <img class="imageOnly" id="content6" src="src/arthouse/7.jpg" style="display: none;"> 
-                <p id="content7" style="display: none;">HGhghuighugmbuhuhbgmhu<br>gmhubgmhbgmvhibgmvhbgmhbgmhlbg,hlb,jhulbjhljöhljhljuhöl</p> 
-
-                
-                 <!-- IMAGE WITH DESCRIPTION ON SAME SLIDE  -->
-                
-                <!-- <div id="content8"  style="display: none;">
-                    <div class="imageText">
-                        <p>HGhghuighugmbuhuhbg<br>mhuhgmhubgmhbgmvhibgmvh<br>bgmhbgmhlbg,hlb,jhulbjhljöhljhljuhöl</p> 
-                        <img src="src/arthouse/8.jpg">
-                    </div>
-                </div> -->
-            
-            </div> 
-            
-            <div class="description">
-                <p style="display: block;">interior render</p>
-                <p style="display: none;">interior render</p>
-                <p style="display: none;">plan</p>
-                <p style="display: none;">north elevation</p>
-                <p style="display: none;">south elevation</p>
-                <p style="display: none;">east elevation</p>
-                <p style="display: none;">west elevation</p>
-                <p style="display: none;">description</p>
-
-                <div class="navigationRow">
-                    <!-- <button id="left" onclick="changeContent(this)">&#x3c;</button> 
-                    <button id="right" onclick="changeContent(this)">&#x3e;</button>  -->
-                    <span id="back" onclick="changeContent(this)">&#x3c;</span> 
-                    <span id="forth" onclick="changeContent(this)">&#x3e;</span> 
-
-                </div>
-            </div> 
-        <!-- </div> -->
-
-
     
+        <div class="content">
+            <img class="imageOnly" id="content0" src="src/arthouse/1.jpg" style="display: block;">
+            <img class="imageOnly" id="content1" src="src/arthouse/2.jpg" style="display: none;">
+            <img class="imageOnly" id="content2" src="src/arthouse/3.jpg" style="display: none;">
+            <img class="imageOnly" id="content3" src="src/arthouse/5.jpg" style="display: none;">
+            <img class="imageOnly" id="content4" src="src/arthouse/6.jpg" style="display: none;"> 
+            <img class="imageOnly" id="content5" src="src/arthouse/4.jpg" style="display: none;"> 
+            <img class="imageOnly" id="content6" src="src/arthouse/7.jpg" style="display: none;"> 
+            <p id="content7" style="display: none;">HGhghuighugmbuhuhbgmhu<br>gmhubgmhbgmvhibgmvhbgmhbgmhlbg,hlb,jhulbjhljöhljhljuhöl</p> 
+
+            
+                <!-- IMAGE WITH DESCRIPTION ON SAME SLIDE  -->
+            
+            <div id="content8"  style="display: none;">
+                <div class="imageText">
+                    <p>HGhghuighugmbuhuhbg<br>mhuhgmhubgmhbgmvhibgmvh<br>bgmhbgmhlbg,hlb,jhulbjhljöhljhljuhöl</p> 
+                    <img src="src/arthouse/8.jpg">
+                </div>
+            </div>
+        
+        </div> 
+        
+        <div class="description">
+            <p style="display: block;">interior render</p>
+            <p style="display: none;">interior render</p>
+            <p style="display: none;">plan</p>
+            <p style="display: none;">north elevation</p>
+            <p style="display: none;">south elevation</p>
+            <p style="display: none;">east elevation</p>
+            <p style="display: none;">west elevation</p>
+            <p style="display: none;">description</p>                
+            <p style="display: none;">description</p>
+
+
+            <div class="navigationRow">
+                <span id="back" onclick="changeContent(this)">&#x3c;</span> 
+                <span id="forth" onclick="changeContent(this)">&#x3e;</span> 
+
+            </div>
+        </div>  
     </div>
 
-
+    <div id="mobileContent" style="display: none;"></div>
 
     
     <div id="footer">
@@ -80,8 +76,34 @@
 
 
     <script>
-        const pictureCount = 7;
+        var width = window.innerWidth;
 
+        if (width < 800){
+            console.log("phone");
+            let allContent = document.getElementsByClassName("content")[0];
+            let allDescription = document.getElementsByClassName("description")[0];
+            console.log(allContent)
+            console.log(allDescription)
+
+            for (const child of allContent.children) { 
+                console.log(child);
+                activeID = parseInt(child.id[7]);
+                child.style.display = "block"
+                let text = allDescription.children[activeID]
+                text.style.display = "block";
+
+                let pa = document.createElement("p");
+                pa.innerHTML = text.innerHTML
+                pa.style.textAlign = "right"
+
+                let newDiv = document.getElementById("mobileContent");
+                newDiv.style.display = "block";
+                newDiv.appendChild(child)
+                newDiv.appendChild(pa)
+            }
+            document.getElementById("contentAll").style.display = "none";
+        }
+        
 
         function changeContent(ele){
 
@@ -89,7 +111,6 @@
             let allDescription = document.getElementsByClassName("description")[0];
 
             let count = allContent.children.length;
-            console.log(count);
 
             let activeID;
 
@@ -116,8 +137,6 @@
 
             allContent.children[activeID].style.display = "block";
             allDescription.children[activeID].style.display = "block";
-
-
         };
 
     </script>
