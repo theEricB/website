@@ -68,7 +68,7 @@
     .content{
         width: 80vw;
         display: flex;
-        justify-content: space-between;
+        justify-content: flex-end;
         align-items: center;
 
         /* background-color: yellow; */
