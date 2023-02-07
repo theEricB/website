@@ -9,60 +9,105 @@
 
 </head>
 <body>
+
     <!-- title and date -->
     <div class="titleRow">
         <h1>Exhibition Pavillon</h1>
         <p>New York, ongoing project</p>
     </div>
 
-    <!-- ----------------------------------- -->
-    <div id ="contentAll">
 
     
-        <div class="content">
-            <img class="imageOnly" id="content0" src="src/arthouse/1.jpg" style="display: block;">
-            <img class="imageOnly" id="content1" src="src/arthouse/2.jpg" style="display: none;">
-            <img class="imageOnly" id="content2" src="src/arthouse/3.jpg" style="display: none;">
-            <img class="imageOnly" id="content3" src="src/arthouse/5.jpg" style="display: none;">
-            <img class="imageOnly" id="content4" src="src/arthouse/6.jpg" style="display: none;"> 
-            <img class="imageOnly" id="content5" src="src/arthouse/4.jpg" style="display: none;"> 
-            <img class="imageOnly" id="content6" src="src/arthouse/7.jpg" style="display: none;"> 
-            <p id="content7" style="display: none;">HGhghuighugmbuhuhbgmhu<br>gmhubgmhbgmvhibgmvhbgmhbgmhlbg,hlb,jhulbjhljöhljhljuhöl</p> 
-
-            
-                <!-- IMAGE WITH DESCRIPTION ON SAME SLIDE  -->
-            
-            <div id="content8"  style="display: none;">
-                <div class="imageText">
-                    <p>HGhghuighugmbuhuhbg<br>mhuhgmhubgmhbgmvhibgmvh<br>bgmhbgmhlbg,hlb,jhulbjhljöhljhljuhöl</p> 
-                    <img src="src/arthouse/8.jpg">
-                </div>
-            </div>
-        
-        </div> 
-        
-        <div class="description">
-            <p style="display: block;">interior render</p>
-            <p style="display: none;">interior render</p>
-            <p style="display: none;">plan</p>
-            <p style="display: none;">north elevation</p>
-            <p style="display: none;">south elevation</p>
-            <p style="display: none;">east elevation</p>
-            <p style="display: none;">west elevation</p>
-            <p style="display: none;">description</p>                
-            <p style="display: none;">description</p>
-
-
-            <div class="navigationRow">
-                <span id="back" onclick="changeContent(this)">&#x3c;</span> 
-                <span id="forth" onclick="changeContent(this)">&#x3e;</span> 
-
-            </div>
-        </div>  
+    <div class="navigationRow">
+        <span id="back" onclick="changeContent(this)">&#x3c;</span> 
+        <span id="forth" onclick="changeContent(this)">&#x3e;</span> 
     </div>
 
-    <div id="mobileContent" style="display: none;"></div>
 
+    <!-- ----------------------------------- -->
+
+    <div class="contentDisplay">
+        <div class="content">
+            <div class="contentText">
+                <p>description following</p> 
+            </div>
+        </div>
+    </div>
+
+    <div class="contentDisplay" style="display: block;">
+        <div class="content">
+            <!-- <div class="contentText">
+                <h3>Brief</h3>
+                <p>Design of a building for a permanent exhibition for two specific artist from New York </p>
+            
+                <h3><br><br>Idea</h3>
+                <p>Modular</p>
+            
+            </div> -->
+            <div class="contentImg">
+                <img src="src/arthouse/1.jpg">
+                <p>interior render</p> 
+            </div>
+        </div>
+    </div>
+
+    <div class="contentDisplay">
+        <div class="content">
+            <div class="contentImg">
+                <img src="src/arthouse/2.jpg">
+                <p>interior render</p> 
+            </div>
+        </div>
+    </div>
+
+    <div class="contentDisplay">
+        <div class="content">
+            <div class="contentImg">
+                <img src="src/arthouse/3.jpg">
+                <p>plan</p> 
+            </div>
+        </div>
+    </div>
+
+    <div class="contentDisplay">
+        <div class="content">
+            <div class="contentImg">
+                <img src="src/arthouse/4.jpg">
+                <p>east elevation</p> 
+            </div>
+        </div>
+    </div>
+
+    <div class="contentDisplay">
+        <div class="content">
+            <div class="contentImg">
+                <img src="src/arthouse/5.jpg">
+                <p>north elevation</p> 
+            </div>
+        </div>
+    </div>
+
+    <div class="contentDisplay">
+        <div class="content">
+            <div class="contentImg">
+                <img src="src/arthouse/7.jpg">
+                <p>west elevation</p> 
+            </div>
+        </div>
+    </div>
+
+    <div class="contentDisplay">
+        <div class="content">
+            <div class="contentImg">
+                <img src="src/arthouse/6.jpg">
+                <p>south elevation</p> 
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- ------------------------------------------------------------------------------------------------ -->
     
     <div id="footer">
         <p>Erik Bauscher</p>
@@ -76,49 +121,20 @@
 
 
     <script>
-        var width = window.innerWidth;
-
-        if (width < 800){
-            console.log("phone");
-            let allContent = document.getElementsByClassName("content")[0];
-            let allDescription = document.getElementsByClassName("description")[0];
-            console.log(allContent)
-            console.log(allDescription)
-
-            for (const child of allContent.children) { 
-                console.log(child);
-                activeID = parseInt(child.id[7]);
-                child.style.display = "block"
-                let text = allDescription.children[activeID]
-                text.style.display = "block";
-
-                let pa = document.createElement("p");
-                pa.innerHTML = text.innerHTML
-                pa.style.textAlign = "right"
-
-                let newDiv = document.getElementById("mobileContent");
-                newDiv.style.display = "block";
-                newDiv.appendChild(child)
-                newDiv.appendChild(pa)
-            }
-            document.getElementById("contentAll").style.display = "none";
-        }
-        
 
         function changeContent(ele){
 
-            let allContent = document.getElementsByClassName("content")[0];
-            let allDescription = document.getElementsByClassName("description")[0];
+            let allContent = document.getElementsByClassName("contentDisplay");
+            let count = allContent.length;
 
-            let count = allContent.children.length;
+            let activeID = -1;
 
-            let activeID;
-
-            for (const child of allContent.children) { 
+            for (let i = 0; i < allContent.length; i++) {
+                let child = allContent[i];
+                
                 if (child.style.display == "block"){
-                    activeID = parseInt(child.id[7]);
                     child.style.display = "none";
-                    allDescription.children[activeID].style.display = "none";
+                    activeID = i;
                 };
             };
 
@@ -134,9 +150,7 @@
                 activeID = count - 1;
             }
 
-
-            allContent.children[activeID].style.display = "block";
-            allDescription.children[activeID].style.display = "block";
+            allContent[activeID].style.display = "block";
         };
 
     </script>

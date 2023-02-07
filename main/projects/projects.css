@@ -6,17 +6,15 @@
         font-family: Arial, Helvetica, sans-serif;
         display: flex;
         flex-direction: column;
-        justify-content: space-between;
-        height: 100%;
-        overflow-y: hidden;
         align-items: center;
+        height: 100%;
+        overflow-y: auto;
     }
 
     /* -------------------------------------------------- */
 
     .titleRow{
         width: 80vw;
-        max-width: 1200px;
         height: 4em;
 
         padding-top: 1em;
@@ -36,90 +34,18 @@
     }
 
 
-    /* -------------------------- */
-
-    #contentAll{
-        height: calc(100vh);
-        width: 80vw;
-        max-width: 1200px;
-
-        margin-top: 2em;
-        margin-bottom: 2em;
-
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        /* background-color: rgb(255, 255, 0); */
-    }
-
-
-    .content{
-        max-width: 80vw;  
-        height: calc(100vh - 14em);
-        display: flex;
-        align-items: center;
-        justify-content: flex-end;
-        /* background-color: yellow; */
-    }
-
-    .imageOnly{
-        max-height: 100%;
-        max-width: 100%;
-    }
-
-
-    .content p{
-        text-align: right;
-    }
-
-    .imageText{
-        height: 100%;
-        width: 80vw;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-
-    }
-
-    .imageText p{
-        width: calc(40vw - 1em);
-        text-align: left;
-    }
-
-    .imageText img{
-        max-width: 40vw;
-        max-height: calc(100vh - 14em);
-    }
-
-    /* -------------------------------- */
-
-    .description{
-        height: 1em;
-
-        margin: 0;
-        padding: 0;
-        margin-top: 0.5em;
-        
-        display: flex;
-        flex-direction: row;
-        justify-content: flex-end;
-        /* background-color: rgb(255, 255, 0); */
-    }
-
-
-    .description p{
-        margin: 0px;
-    }
-
-    
-
     .navigationRow{
+        width: 100%;
         display: flex;
-        margin-left: 20px;
+        justify-content: flex-end;
     }
 
     .navigationRow span{
-        margin-left: 5px;
+        height: 1em;
+
+        margin-left: .5em;
+        margin-top: .5em;
+        margin-bottom: .5em;
         width: 20px;
         text-align: center;
         border-radius: 5px;        
@@ -131,26 +57,65 @@
         cursor: pointer;
     }
 
+    /* -------------------------- */
+
+
+
+    .contentDisplay{
+        display: none;
+    }
+
+    .content{
+        width: 80vw;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        /* background-color: yellow; */
+    }
+
+    .contentImg img{
+        max-width: 100%;
+        max-height: calc(100vh - 13.5em);
+    }
+
+    .contentImg p{
+        height: 1em;
+        margin-top: 0.25em;
+        margin-bottom: 0;
+        text-align: end;
+        /* background-color: aqua;   */
+    }
+
+
+    .contentText{
+        margin: 0;
+        padding: 0;
+        margin-right: 1em;
+        max-height: calc(100vh - 13.5em);
+        text-overflow: clip;
+        /* background-color: aqua; */
+    }
+
     /* --------------------------------------------------------------- */
 
     #footer{
+        position: absolute;
+        bottom: 0;
+        left: 0;
+
         height: 1em;
         width: 80vw;
         max-width: 1200px;
 
-        /* margin-top: 1em; */
-
         padding-bottom: 1em;
-        padding-top: 1em;    
+        padding-top: 1em; 
+        padding-left: 10vw;
+        padding-right: 10vw;   
         
         display: flex;
         justify-content: space-between;
-        
-        /*         
-        border-top: solid;
-        border-color: rgb(30, 30, 30);
-        border-width: 1px;
-        */
+
         
         /* background-color: rgb(255, 0, 0); */
     }
@@ -179,99 +144,65 @@
         padding: 0;
         font-family: Arial, Helvetica, sans-serif;
         align-items: center;
-        margin: 5px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
     }
 
     /* -------------------------------------------------- */
 
     .titleRow{
-        width: 95vw;
-        height: 4em;
+        width: 90vw;
+        height: 5em;
 
         padding-top: 1em;
         padding-bottom: 1em;
-        display: flex;
-        flex-direction: column;
-        justify-content:flex-start;
-        /* background-color: rgb(0, 0, 255); */
+
+    /* background-color: rgb(0, 0, 255); */
+
 
     }
 
     .titleRow h1{
         margin: 0;
+        padding: 0;
     }
     .titleRow p{
         margin: 0;
-    }
-
-
-    /* -------------------------- */
-
-    #contentAll{
-        margin-top: 2em;
-        margin-bottom: 2em;
-
-        /* background-color: rgb(114, 114, 34); */
-    }
-
-
-    .content{
-
-        display: flex;
-        align-items: center;
-        justify-content: flex-end;
-    }
-
-    .imageOnly{
-        max-height: 100vw;
-        max-width: 100%;
-    }
-
-
-    .content p{
-        text-align: right;
-    }
-
-    .imageText{
-        display: flex;
-        flex-direction: column;
-        align-items: flex-end;
-        justify-content: space-around;
-
-    }
-
-
-    .imageText img{
-        max-width: 100%;
-        max-height: 100vw;
-    }
-
-    /* -------------------------------- */
-
-    .description{
-        height: 5.5em;
-
-        margin: 0;
         padding: 0;
-        margin-top: 0.5em;
-        
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-end;
-        /* background-color: rgb(255, 255, 0); */
     }
-
-
-    .description p{
-        margin: 0px;
-        text-align: end;
-    }
-
-    
 
     .navigationRow{
         display: none;
     }
+
+    /* -------------------------- */
+
+    .content{
+        display: flex;
+        align-items: center;
+    }
+
+
+    .contentImg img{
+        max-width: 90vw;
+    }
+
+    .contentImg p{
+        text-align: right;
+        margin-top: 1px;
+        margin-bottom: 50px;
+    }
+
+    .contentText{
+        width: 90vw;
+        margin-bottom: 50px;
+
+    }
+
+
+
+
 
 
     /* --------------------------------------------------------------- */
@@ -279,6 +210,8 @@
 
     #footer{
         height: 6em;
+        width: 90vw;
+
 
         /* margin-top: 1em; */
 
