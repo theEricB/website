@@ -1,117 +1,119 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>EB CV</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="apple-touch-icon" sizes="180x180" href="../logo/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../logo/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../logo/favicon-16x16.png">
+    <link rel="manifest" href="../logo/site.webmanifest">
+
+    <title>cv eb</title>
     <style>
         body {
             font-family: Arial, Helvetica, sans-serif;
         }
-
         .container{
-            margin: 2vw;
-            padding: 0;
-            border: solid;
-        }
-
-        .section {
-            margin-bottom: 10px;
-            padding: 0;
+            margin: auto;
+            max-width: 1200px;
             display: flex;
-            justify-content: space-between;
-            background-color: yellow;
+            flex-direction: column;
+            background-color: rgba(0, 0, 0, 0.113);
+            padding: 1vw;
             border-radius: 1vw;
+        }
+        #img{
+            width: 100;
+            display: flex;
+            flex-direction: row;
+            margin-bottom: 20px;
+        }
+        img{
+            width: 20%;
+            border-radius: 1vw;
+        }
+        .section{
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: solid;
+            border-width: 1px;
+
         }
 
         .sectionTitle {
             margin: 0;
+            margin-bottom: 20px;
             padding: 0;
-            width: 33vw;
+            font-size: large;
             font-weight: bold;
-            background-color: rgba(77, 52, 202, 0.211);
+        }
+        .date{
+            margin: 0;
+            padding: 0;
+            margin-bottom: 5px;
+            font-weight: bold;
+            margin-left: 2vw;
+        }
+        .content{
+            margin: 0;
+            padding: 0;
+            margin-left: 4vw;
+            margin-bottom: 15px;
         }
 
-    
-        .entry {
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: space-between;
-            background-color: violet;
-            width: 66vw;
-        }
-        
-        .entryDate{
-            margin: 0;
-            margin-right: 1vw;
-            
-            padding: 0;
-            width: 20vw;
-            background-color: blueviolet;
-        }
 
-        .entryContext{
-            margin: 0;
-            padding: 0;
-            margin-bottom: 1vw;
-            width: 40vw;
-            background-color: aqua;
-        }
+    #footer{
+        width: 100%;
+        padding-top: 1em;         
+        display: flex;
+        justify-content: space-between;
+    }
+    #footer p{
+        margin: 0;
+        padding: 0;
+        font-size: smaller;
+    }
+    .footerMenu {
+        text-decoration: underline;    
+    }
+    .footerMenu:hover{
+        cursor: pointer;
+    }
+
 
     </style>
 </head>
+
 <body>
     <div class="container">
+        <div id="img"><img src="me.jpeg"></div>
+        <div class="section">
+            <p class="sectionTitle">me</p>
+                <p class="date">Erik Bauscher</p>
+                    <p class="content">Student @ University of Stuttgart (Architecture and Urban Planning)<!--<br><br>13.08.1998<br><br>Carl-Diem-Str. 7<br>71679 Asperg<br><br>0176 80068510<br>erikbauscher5@googlemail.com--></p>
+        </div>
+
         <div class="section">
             <p class="sectionTitle">education</p>
-            <div>
-                <div class="entry">
-                    <p class="entryDate">Feb 22 - Jan 23</p>
-                    <p class="entryContext">The University of Sydney<br>Master of Architecture, exchange program</p>
-                </div>
-                <div class="entry">
-                    <p class="entryDate">Feb 22 - Jan 23</p>
-                    <p class="entryContext">The University of Sydney<br>Master of Architecture, exchange program</p>
-                </div>
-            </div>
+                <p class="date">feb 23 -</p>
+                    <p class="content">University of Stuttgart<br>Master of Architecture and Urban Planning</p>
+                <p class="date">feb 22 - feb 23</p>
+                    <p class="content">The University of Sydney<br>Master of Architecture, exchange program</p>
         </div>
+    
 
-        <div class="section">
-            <p class="sectionTitle">work</p>
-            <div class="entry">
-                <p class="entryDate">Feb 22 - Jan 23</p>
-                <p>The University of Sydney</p>
-            </div>
+
+
+    
+        <div id="footer">
+            <p>Erik Bauscher</p>
+            <p>last update: feb 2023</p>
+            <p class="footerMenu" onclick="window.open('../folio.html', '_self');">all projects</p>
+            <p class="footerMenu" onclick="window.open('../cv.html', '_self');">cv</p>
+            <p class="footerMenu" onclick="window.open('../about.html', '_self');">about</p>
         </div>
-
-
-        <div class="section">
-            <p class="sectionTitle">sports</p>
-            <div class="entry">
-                <p class="entryDate">Feb 22 to Jan 23</p>
-                <p>The University of Sydney</p>
-            </div>
-        </div>
-
-
-        <div class="section">
-            <p class="sectionTitle">software</p>
-            <div class="entry">
-                <p class="entryDate">Feb 22 to Jan 23</p>
-                <p>The University of Sydney</p>
-            </div>
-        </div>
-
-        <div class="section">
-            <p class="sectionTitle">language</p>
-            <div class="entry">
-                <p class="entryDate">Feb 22 to Jan 23</p>
-                <p>The University of Sydney</p>
-            </div>
-        </div>
-
     </div>
-
-
 
 </body>
 
